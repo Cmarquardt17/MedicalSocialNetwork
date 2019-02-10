@@ -1,76 +1,151 @@
-a{
-	font-size: 20px;
-	font-variant: small-caps;
+body{
+    margin: 0;
+    padding: 0;
+    background: url(../images/background_login.jpg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
 }
 
-h1 {
-  padding-top: 5px;
-  padding-bottom: 5px;
-	text-align: center;
+.loginbox{
+    width: 320px;
+    height: 420px;
+    background: black;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
 }
 
-p {
-  padding: 0;
-  text-align: center;
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
 }
 
-body {
-  font-family: 'Lato', sans-serif;
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
 }
 
-.short-row {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  flex-wrap: wrap;
-
+.loginbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
 }
 
-.short-row input {
-  background-color: #FFFFFF;
-  border: 1px solid #D6D9DC;
-  border-radius: 3px;
-  width: 20%;
-  padding: 7px;
-  font-size: 14px;
-  margin-top: 3px;
-  margin-bottom: 5px;
-  margin-left: 15px;
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
 }
 
-.short-row label {
-  margin-bottom: 5px;
-  margin-top: 10px;
-  margin-left: 15px;
+.loginbox input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+}
+.loginbox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: #708090;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+}
+.loginbox input[type="submit"]:hover
+{
+    cursor: pointer;
+    background: #ffc107;
+    color: #000;
+}
+.loginbox a{
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
 }
 
-.longer-row {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  flex-wrap: wrap;
+.loginbox a:hover
+{
+    color: #ffc107;
 }
 
-.longer-row input[type='text'] {
-  background-color: #FFFFFF;
-  border: 1px solid #D6D9DC;
-  border-radius: 3px;
-  width: 40%;
-  padding: 7px;
-  font-size: 14px;
-  margin-left: 15px;
-}
 
-.longer-row label {
-  margin-bottom: 10px;
-  margin-top: 1px;
-  margin-left: 15px;
-}
 
-.check {
-  margin-left: 13px;
-  margin-bottom: 5px;
-  font-family: 'Lato', sans-serif;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
