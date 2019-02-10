@@ -1,0 +1,166 @@
+.vertical-line{
+      width: 2px; 
+      background-color: black; 
+      height: 500%;
+	  position: absolute;
+      top: 50%;
+      left: 30%;
+      margin-right: -50%;
+      transform: translate(-50%, -50%) 
+}
+
+h2{
+	float: right;
+	padding-right: 200px;
+}
+
+.parallax {
+    background-attachment: scroll;
+  }
+  
+.condition input {
+  overflow: auto;
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 80%;
+  padding: 3px;
+  font-size: 14px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+  margin-left: 2px;
+  margin-right: 300px;
+}
+  
+.date input {
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 18%;
+  padding: 3px;
+  font-size: 14px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+  margin-left: 2px;
+  margin-right: 2px;
+}
+  
+a{
+	font-size: 20px;
+	font-variant: small-caps;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+	text-align: center;
+}
+
+p {
+  padding: 0;
+  text-align: center;
+}
+
+.user {
+  padding: 10px;
+  margin-left: 100px;
+  margin-top: 30px;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  padding: 20px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.one {
+  background-image: url('../images/profilepicb.PNG');
+}
+
+.backgroundinfo {
+  clear: bottom;
+  margin-top: 10px;
+  padding: 10px;
+  float:left;
+  margin-bottom: 20px;
+  margin-left: 60px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;	
+}
+
+.backgroundinfo input {
+  
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 40%;
+  padding: 50px;
+  font-size: 14px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+
+.backgroundinfo label {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.short-row {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+
+}
+
+.short-row input {
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 20%;
+  padding: 7px;
+  font-size: 14px;
+  margin-top: 3px;
+  margin-bottom: 5px;
+  margin-left: 15px;
+}
+
+.short-row label {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-left: 15px;
+}
+
+.longer-row {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.longer-row input[type='text'] {
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 40%;
+  padding: 7px;
+  font-size: 14px;
+  margin-left: 15px;
+}
+
+.longer-row label {
+  margin-bottom: 10px;
+  margin-top: 1px;
+  margin-left: 15px;
+}

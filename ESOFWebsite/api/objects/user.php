@@ -1,10 +1,8 @@
 <?php
 class User{
-
     // database connection and table name
     private $conn;
     private $table_name = "users";
-
     // object properties
     public $id;
     public $last;
@@ -13,14 +11,12 @@ class User{
     public $email;
     public $username;
     public $password;
-
     // constructor with $db as database connection
     public function __construct($db){
         $this->conn = $db;
     }
     // signup user
     function signup(){
-
         if($this->isAlreadyExist()){
             return false;
         }
@@ -29,10 +25,8 @@ class User{
                     " . $this->table_name . "
                 SET
                     id=:id, last=:last, middle=:middle, first=:first, email=:email, username=:username, password=:password";
-
         // prepare query
         $stmt = $this->conn->prepare($query);
-
         // sanitize
         $this->id=htmlspecialchars(strip_tags($this->id));
         $this->last=htmlspecialchars(strip_tags($this->last));
@@ -41,7 +35,6 @@ class User{
         $this->email=htmlspecialchars(strip_tags($this->email));
         $this->username=htmlspecialchars(strip_tags($this->username));
         $this->password=htmlspecialchars(strip_tags($this->password));
-
         // bind values
         $stmt->bindParam(":id", $this->id);
         $stmt->bindParam(":last", $this->last);
@@ -50,17 +43,12 @@ class User{
         $stmt->bindParam(":email", $this->email);
         $stmt->bindParam(":username", $this->username);
         $stmt->bindParam(":password", $this->password);
-
         // execute query
-
         if($stmt->execute()){
             $this->id = $this->conn->lastInsertId();
             return true;
         }
-
         return false;
-
-
     }
     // login user
     function login(){
