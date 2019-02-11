@@ -3,7 +3,7 @@ language: php
 
 notifications:
   email:
-  recipients:
+    recipients:
       - kaylaawheelerr@gmail.com
       - co.sluggett@gmail.com
       - christianmarquardt16@gmail.com
