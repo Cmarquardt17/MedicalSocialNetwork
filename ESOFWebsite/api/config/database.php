@@ -1,10 +1,10 @@
 <?php
 class Database{
     // specify your own database credentials
-    private $host = "localhost";
-    private $db_name = "medicalsocialnetworkapp";
+    private $host = "medicalappdb.caddlqjiumvq.us-east-2.rds.amazonaws.com";
+    private $db_name = "medicalappdb";
     private $username = "root";
-    private $password = "";
+    private $password = "password";
     public $conn;
     // get the database connection
     public function getConnection(){
@@ -17,6 +17,6 @@ class Database{
         }
         return $this->conn;
     }
-    
+
 }
 ?>
