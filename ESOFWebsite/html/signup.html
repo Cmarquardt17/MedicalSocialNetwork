@@ -28,27 +28,6 @@
 </p>
 
 
-<!--
-<div class='short-row'>
-  <label for='first'>First Name</label>
-  <input id='first' name='first' type='text'/>
-  <label for='middle'>Middle Name</label>
-  <input id='middle' name='middle' type='text'/>
-  <label for='last'>Last Name</label>
-  <input id='last' name='last' type='text'/>
-  </div>
-  <div class='longer-row'>
-	<label for='email'>Email</label>
-  <input id='email' name='email' type='text'/>
-  	</div>
-<div class='short-row'>
-	<label for='username'>User Name</label>
-  <input id='username' name='user-name' type='text'/>
-  <label for='password'>Password</label>
-  <input id='password' name='password' type='text'/>
-</div>
--->
-
 <form class="sign-up" action="../api/user/signup.php" method="POST">
   <div class='short-row'>
   <div class="group">
@@ -63,13 +42,11 @@
     <label for="last" class="label">Last Name</label><br>
     <input id="last" name="last" type="text" class="input">
   </div>
-  </div>
-  <div class='longer-row'>
   <div class="group">
-    <label for="email" class="label">Email</label><br>
-    <input id="email" name="email" type="text" class="input">
+    <label for="phoneNum" class="label">Phone Number (xxx-xxx-xxxx)</label><br>
+    <input id="phoneNum" name="phoneNum" type="text" class="input">
   </div>
-</div>
+  </div>
 <div class='short-row'>
   <div class="group">
     <label for="user" class="label">Username</label><br>
@@ -82,6 +59,38 @@
   <div class="group">
     <label for="pass" class="label">Confirm Password</label><br>
     <input id="pass" type="password" class="input" data-type="password">
+  </div>
+  <div class="group">
+    <label for="dob" class="label">DOB (xx/xx/xxxx)</label><br>
+    <input id="dob" type="dob" class="input" data-type="password">
+  </div>
+  </div>
+  <div class='short-row'>
+    <div class="group">
+    <label for="ssn" class="label">Social Security #</label><br>
+    <input id="ssn" type="ssn" class="input" data-type="ssn">
+  </div>
+    <div class="group">
+    <label for="gender" class="label">Male or Female? (M/F)</label><br>
+    <input id="gender" type="gender" class="input" data-type="gender">
+  </div>
+    <div class="group">
+    <label for="marital" class="label">Marital Status</label><br>
+    <input id="marital" type="marital" class="input" data-type="marital">
+  </div>
+  <div class="group">
+    <label for="fax" class="label">Fax (Not required)</label><br>
+    <input id="fax" type="fax" class="input" data-type="fax">
+  </div>
+  </div>
+  <div class='longer-row'>
+  <div class="group">
+    <label for="email" class="label">Email</label><br>
+    <input id="email" name="email" type="text" class="input">
+  </div>
+  <div class="group">
+    <label for="address" class="label">Address</label><br>
+    <input id="address" name="address" type="text" class="input">
   </div>
 </div>
   <div class="group">

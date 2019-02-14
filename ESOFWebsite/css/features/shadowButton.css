@@ -12,6 +12,8 @@
   cursor: pointer;
   margin-left: 25px;
   margin-bottom: 30px;
+  position: absolute;
+  bottom: 1px;
 }
 
 .button span {

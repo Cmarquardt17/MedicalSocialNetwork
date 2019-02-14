@@ -10,7 +10,7 @@ body {
 h1 {
   padding-top: 5px;
   padding-bottom: 5px;
-	text-align: center;
+  text-align: center;
 }
 
 p {
@@ -19,52 +19,69 @@ p {
 }
 
 .short-row {
-  margin-bottom: 20px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
+  float: left;
+  padding-left: 20px;
 
+}
+
+#pass, #plan {
+	clear: both;
+	
 }
 
 .short-row input {
   background-color: #FFFFFF;
   border: 1px solid #D6D9DC;
   border-radius: 3px;
-  width: 20%;
+  width: 90%;
   padding: 7px;
+  padding-top: 10px;
   font-size: 14px;
   margin-top: 3px;
-  margin-bottom: 5px;
-  margin-left: 15px;
+  margin-bottom: 30px;
+  margin-left: 25px;
+  
 }
 
 .short-row label {
   margin-bottom: 5px;
   margin-top: 10px;
-  margin-left: 15px;
+  margin-left: 25px;
 }
 
 .longer-row {
-  margin-bottom: 20px;
+  padding-top: 88px;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   flex-wrap: wrap;
-}
+  float: right;
+  padding-right: 85px;
 
-.longer-row input[type='text'] {
-  background-color: #FFFFFF;
-  border: 1px solid #D6D9DC;
-  border-radius: 3px;
-  width: 40%;
-  padding: 7px;
-  font-size: 14px;
-  margin-left: 15px;
 }
 
 .longer-row label {
-  margin-bottom: 10px;
-  margin-top: 1px;
+  margin-bottom: 5px;
+  margin-top: 10px;
   margin-left: 15px;
+  margin-right:40px;
 }
+
+.longer-row input {
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 100%;
+  padding: 7px;
+  padding-top: 10px;
+  font-size: 14px;
+  margin-top: 3px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 35px;
+}
+
