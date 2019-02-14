@@ -7,10 +7,11 @@
   text-align: center;
   font-size: 24px;
   padding: 10px;
+  padding-top: -50px;
   width: 150px;
   transition: all 0.5s;
   cursor: pointer;
-  margin-left: 25px;
+  margin-left: -270px;
   margin-bottom: 30px;
   position: absolute;
   bottom: 1px;
@@ -39,4 +40,9 @@
 .button:hover span:after {
   opacity: 1;
   right: 0;
+}
+
+#sign{
+	  margin-left: -420px;
+	  bottom: 0px;
 }
