@@ -1,8 +1,8 @@
 .vertical-line{
       width: 2px; 
-      background-color: black;
-	  position: absolute;
-      top: 50%;
+      background-color: black; 
+      position: absolute;
+      top: 60%;
       left: 30%;
       margin-right: -50%;
       transform: translate(-50%, -50%) 
