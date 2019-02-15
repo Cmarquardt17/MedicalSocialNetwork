@@ -30,7 +30,7 @@ p {
 
 #pass, #plan, #address {
 	clear: both;
-	
+
 }
 
 .short-row input {
@@ -44,7 +44,7 @@ p {
   margin-top: 3px;
   margin-bottom: 30px;
   margin-left: 25px;
-  
+
 }
 
 .short-row label {
@@ -60,7 +60,7 @@ p {
   flex-direction: column;
   flex-wrap: wrap;
   float: right;
-  padding-right: 85px;
+  padding-right: 0px;
 
 }
 
@@ -84,4 +84,3 @@ p {
   margin-left: 15px;
   margin-right: 35px;
 }
-
