@@ -1,0 +1,87 @@
+a{
+	font-size: 20px;
+	font-variant: small-caps;
+}
+
+body {
+	font-family: 'Lato', sans-serif;
+}
+
+h1 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+p {
+  padding: 0;
+  text-align: center;
+}
+
+.short-row {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  float: left;
+  padding-left: 20px;
+
+}
+
+#pass, #plan, #address {
+	clear: both;
+	
+}
+
+.short-row input {
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 90%;
+  padding: 7px;
+  padding-top: 10px;
+  font-size: 14px;
+  margin-top: 3px;
+  margin-bottom: 30px;
+  margin-left: 25px;
+  
+}
+
+.short-row label {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+.longer-row {
+  padding-top: 88px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  float: right;
+  padding-right: 85px;
+
+}
+
+.longer-row label {
+  margin-bottom: 5px;
+  margin-top: 10px;
+  margin-left: 15px;
+  margin-right:40px;
+}
+
+.longer-row input {
+  background-color: #FFFFFF;
+  border: 1px solid #D6D9DC;
+  border-radius: 3px;
+  width: 100%;
+  padding: 7px;
+  padding-top: 10px;
+  font-size: 14px;
+  margin-top: 3px;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 35px;
+}
+
