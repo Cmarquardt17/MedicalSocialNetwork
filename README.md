@@ -1,5 +1,5 @@
 
-Medical Social network
+Medical Social Network
 
 The goal of this project is to create a social networkwhere you can choose to connect ("friend") with your clinicians to share information with them. Following are the requirement:
 
