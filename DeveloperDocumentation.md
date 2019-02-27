@@ -1,6 +1,6 @@
 <h1>Developer Documentation for the Medical Social Network</h1>
 
-This documentation is for developers who wish to contribute the the application.  The documentation is split into 7 different categories:
+This documentation is for developers who wish to contribute the the application.  The documentation is split into 6 different categories:
 
 * How to Obtain Source Code
 * Layout of Directory Structure
