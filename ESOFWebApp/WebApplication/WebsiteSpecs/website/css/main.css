@@ -1,121 +1,143 @@
 /*! normalize.css v4.2.0 | MIT License | github.com/necolas/normalize.css */
 html{
-font-family:sans-serif;line-height:1.15;
--ms-text-size-adjust:100%;-webkit-text-size-adjust:100%
+	font-family:sans-serif;
+	line-height:1.15;
+	-ms-text-size-adjust:100%;
+	-webkit-text-size-adjust:100%
 }
 
 body{
-	margin:0
+	margin:0;
 }
 
 h1{
 	bottom: 5%;
 }
+
 article,aside,footer,header,nav,section{
-display:block
+	display:block;
 }
 
 h1{
-font-size:2em;margin:.67em 0
+	font-size:2em;margin:.67em 0
 }
 
 figcaption,figure,main{
-display:block
+	display:block;
 }
 
 figure{
-margin:1em 40px
+	margin:1em 40px
 }
 
 hr{
-box-sizing:content-box;height:0;overflow:visible
+	box-sizing:content-box;
+	height:0;
+	overflow:visible;
 }
 
 pre{
-font-family:monospace,monospace;font-size:1em
+	font-family:monospace,monospace;
+	font-size:1em;
 }
 
 a{
-background-color:transparent;-webkit-text-decoration-skip:objects
+background-color:transparent;
+-webkit-text-decoration-skip:objects;
 }
 
 a:active,a:hover{
-outline-width:0
+	outline-width:0;
 }
 
 abbr[title]{
-	border-bottom:none;text-decoration:underline;text-decoration:underline dotted
+	border-bottom:none;
+	text-decoration:underline;
+	text-decoration:underline dotted;
 }
 	
 b,strong{
-	font-weight:inherit;font-weight:bolder
+	font-weight:inherit;
+	font-weight:bolder;
 }
 
 code,kbd,samp{
-	font-family:monospace,monospace;font-size:1em
+	font-family:monospace,monospace;
+	font-size:1em;
 }
 
 dfn{
-	font-style:italic
+	font-style:italic;
 }
 
 mark{
-	background-color:#ff0;color:#000
+	background-color:#ff0;
+	color:#000;
 }
 
 small{
-	font-size:80%
+	font-size:80%;
 	}
 	
 sub,sup{
-	font-size:75%;line-height:0;position:relative;vertical-align:baseline
+	font-size:75%;
+	line-height:0;
+	position:relative;
+	vertical-align:baseline;
 }
 
 sub{
-	bottom:-.25em
+	bottom:-.25em;
 }
 sup{
-top:-.5em
+	top:-.5em;
 }
 
 audio,video{
-display:inline-block
+	display:inline-block;
 }
 
 audio:not([controls]){
-display:none;height:0}img{border-style:none
+	display:none;height:0;
+	}
+	
+img{
+	border-style:none;
 }
 
-svg:not(:root){overflow:hidden
+svg:not(:root){
+	overflow:hidden;
 }
 
 button,input,optgroup,select,textarea{
-font:inherit;
-margin:0
+	font:inherit;
+	margin:0;
 }
 
 optgroup{
-font-weight:700
+	font-weight:700
 }
 
 button,input{
-overflow:visible
+	overflow:visible;
 }
 
 button,select{
-text-transform:none
+	text-transform:none;
 }
 
 [type=reset],[type=submit],button,html [type=button]{
--webkit-appearance:button;cursor:pointer
+	-webkit-appearance:button;
+	cursor:pointer;
 }
 
 [type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{
-border-style:none;padding:0
+	border-style:none;
+	padding:0;
 }
 
 [type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{
-outline:1px dotted ButtonText
+	outline:1px dotted ButtonText;
 }
 
 fieldset{
