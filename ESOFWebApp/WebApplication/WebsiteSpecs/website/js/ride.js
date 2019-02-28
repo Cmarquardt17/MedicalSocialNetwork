@@ -15,7 +15,7 @@ WildRydes.map = WildRydes.map || {};
         alert(error);
         window.location.href = '/signin.html';
     });
-    function requestUnicorn(pickupLocation) {
+    function requestdoctor(pickupLocation) {
         $.ajax({
             method: 'POST',
             url: _config.api.invokeUrl + '/ride',
@@ -33,20 +33,20 @@ WildRydes.map = WildRydes.map || {};
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
                 console.error('Error requesting ride: ', textStatus, ', Details: ', errorThrown);
                 console.error('Response: ', jqXHR.responseText);
-                alert('An error occured when requesting your unicorn:\n' + jqXHR.responseText);
+                alert('An error occured when requesting your doctor:\n' + jqXHR.responseText);
             }
         });
     }
 
     function completeRequest(result) {
-        var unicorn;
+        var doctor;
         var pronoun;
         console.log('Response received from API: ', result);
-        unicorn = result.Unicorn;
-        pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
-        displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.');
+        doctor = result.Doctor;
+        pronoun = doctor.Gender === 'Male' ? 'his' : 'her';
+        displayUpdate(doctor.Name + ', your ' + doctor.Color + ' doctor, is on ' + pronoun + ' way.');
         animateArrival(function animateCallback() {
-            displayUpdate(unicorn.Name + ' has arrived. Giddy up!');
+            displayUpdate(doctor.Name + ' has arrived. Giddy up!');
             WildRydes.map.unsetLocation();
             $('#request').prop('disabled', 'disabled');
             $('#request').text('Set Pickup');
@@ -77,14 +77,13 @@ WildRydes.map = WildRydes.map || {};
 
     function handlePickupChanged() {
         var requestButton = $('#request');
-        requestButton.text('Request Unicorn');
         requestButton.prop('disabled', false);
     }
 
     function handleRequestClick(event) {
         var pickupLocation = WildRydes.map.selectedPoint;
         event.preventDefault();
-        requestUnicorn(pickupLocation);
+        requestdoctor(pickupLocation);
     }
 
     function animateArrival(callback) {

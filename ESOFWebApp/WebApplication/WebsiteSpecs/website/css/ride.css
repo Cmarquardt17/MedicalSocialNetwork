@@ -25,7 +25,7 @@ html, body, #main, #map {
     border-color: #000;
     border-radius: 5px;
     text-align: center;
-    width: 135px;
+    width: 155px;
 }
 
 #request:disabled {
