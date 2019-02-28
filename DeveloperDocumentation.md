@@ -30,4 +30,4 @@ For our weekly build, we will use Travis. For our failure test case, we received
 The way we will release is updating the code and documentation. This will then have the newest version readily available for the user, since it is a website, we do not have to have downloads for the new release. We will then do sanity-checking that the website and downloadable files are as we wish. 
 
 <h2>How to find Bugs</h2>
-A list of outstanding bugs can be found here:  https://medicalsocialnetwork.mantishub.io/my_view_page.php
+A list of outstanding bugs can be found here:  https://medicalsocialnetwork.atlassian.net/projects/MSN/issues
