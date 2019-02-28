@@ -29,6 +29,7 @@
   and the signup process will be relatively quick! </br>
 </p>
 <form class="sign-up" action="../api/user/signup2.php" method="POST">
+<!-- 
   <div class='short-row'>
   <div class="group">
     <label for="first" class="label">First Name</label><br>
@@ -42,16 +43,22 @@
     <label for="last" class="label">Last Name</label><br>
     <input id="last" name="last" type="text" class="input">
   </div>
+ -->
+<!-- 
   <div class="group">
     <label for="phoneNum" class="label">Phone Number (xxx-xxx-xxxx)</label><br>
     <input id="phoneNum" name="phoneNum" type="text" class="input">
   </div>
+ -->
+<!-- 
   </div>
 <div class='short-row'>
   <div class="group">
     <label for="user" class="label">Username</label><br>
     <input id="username" name="username" type="text" class="input">
   </div>
+ -->
+ <div class='short-row'>
   <div class="group">
     <label for="pass" class="label">Password</label><br>
     <input id="password" name="password" type="password" class="input" data-type="password">
@@ -60,13 +67,16 @@
     <label for="pass" class="label">Confirm Password</label><br>
     <input id="pass" type="password" class="input" data-type="password">
   </div>
+<!-- 
   <div class="group">
     <label for="dob" class="label">DOB (xx/xx/xxxx)</label><br>
     <input id="dob" type="dob" class="input" data-type="password">
   </div>
+ -->
   </div>
   <div class='short-row'>
-    <div class="group">
+    <!-- 
+<div class="group">
     <label for="ssn" class="label">Social Security #</label><br>
     <input id="ssn" type="ssn" class="input" data-type="ssn">
   </div>
@@ -83,23 +93,32 @@
     <input id="fax" type="fax" class="input" data-type="fax">
   </div>
   </div>
+ -->
   <div class='longer-row'>
   <div class="group">
     <label for="email" class="label">Email</label><br>
     <input id="email" name="email" type="text" class="input">
   </div>
-  <div class="group">
+  <!-- 
+<div class="group">
     <label for="address" class="label">Address</label><br>
     <input id="address" name="address" type="text" class="input">
   </div>
+ -->
 </div>
 </form>
 <div style="text-align:center;">
-      <a href="signup2.html" input type="submit" class="button">Next</a>
+      <a href="../index.html" input type="submit" class="button">Submit</a>
       </div>
 
       
-  <div class="hr"></div>
+ 
+ 		<script src="js/vendor/jquery-3.1.0.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/vendor/aws-cognito-sdk.min.js"></script>
+        <script src="js/vendor/amazon-cognito-identity.min.js"></script>
+        <script src="js/config.js"></script>
+        <script src="js/cognito-auth.js"></script>
 
 </body>
 </html>
