@@ -53,7 +53,7 @@
     background-color: rgba(0,0,0,0);
     cursor: pointer;
 }
-
+/* https://bugzilla.mozilla.org/show_bug.cgi?id=140562 */
 .mapboxgl-ctrl > button::-moz-focus-inner {
     border: 0;
     padding: 0;

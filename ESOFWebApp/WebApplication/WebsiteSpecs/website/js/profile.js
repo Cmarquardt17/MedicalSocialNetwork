@@ -1,11 +1,10 @@
-/*global WildRydes _config*/
+/*global MSN _config*/
 
-var WildRydes = window.WildRydes || {};
-WildRydes.map = WildRydes.map || {};
+var Profiles = window.MSN || {};
 
 (function rideScopeWrapper($) {
     var authToken;
-    WildRydes.authToken.then(function setAuthToken(token) {
+    Profiles.authToken.then(function setAuthToken(token) {
         if (token) {
             authToken = token;
         } else {
@@ -15,7 +14,8 @@ WildRydes.map = WildRydes.map || {};
         alert(error);
         window.location.href = '/signin.html';
     });
-    function requestdoctor(pickupLocation) {
+
+    function requestDoctor(pickupLocation) {
         $.ajax({
             method: 'POST',
             url: _config.api.invokeUrl + '/ride',
@@ -23,6 +23,10 @@ WildRydes.map = WildRydes.map || {};
                 Authorization: authToken
             },
             data: JSON.stringify({
+                PickupLocation: {
+                    Latitude: pickupLocation.latitude,
+                    Longitude: pickupLocation.longitude
+                }
             }),
             contentType: 'application/json',
             success: completeRequest,
@@ -34,31 +38,66 @@ WildRydes.map = WildRydes.map || {};
         });
     }
 
+	$(function profileFill(){
+	var pickupLocation = Profiles.selectedPoint = {
+                latitude: -111.04,
+                longitude: 45.67
+            };
+        requestUserName(pickupLocation);
+	});
+
+	function requestUserName(pickupLocation) {
+		$.ajax({
+            method: 'POST',
+            url: _config.api.invokeUrl + '/user',
+            headers: {
+                Authorization: authToken
+            },
+            data: JSON.stringify({
+                PickupLocation: {
+                    Latitude: pickupLocation.latitude,
+                    Longitude: pickupLocation.longitude
+                }
+            }),
+            contentType: 'application/json',
+            success: fillProfile,
+            error: function ajaxError(jqXHR, textStatus, errorThrown) {
+                console.error('Error requesting ride: ', textStatus, ', Details: ', errorThrown);
+                console.error('Response: ', jqXHR.responseText);
+                alert('An error occured when requesting a user:\n' + jqXHR.responseText);
+            }
+        });
+	}
+
+	function fillProfile(result) {
+        var user;
+        console.log('Response received from API: ', result);
+        user = result.User;
+		$('#name').text(user);
+    }
+
     function completeRequest(result) {
         var doctor;
         var pronoun;
         console.log('Response received from API: ', result);
         doctor = result.Doctor;
         pronoun = doctor.Gender === 'Male' ? 'his' : 'her';
-        animateArrival(function animateCallback() {
-            displayUpdate('You are now friends!');
-            WildRydes.map.unsetLocation();
-            $('#request').prop('disabled', 'disabled');
-            $('#request').text('Set Pickup');
-        });
+        displayUpdate('You are now friends with ' + doctor.Name);
     }
 
     // Register click handler for #request button
     $(function onDocReady() {
+
+    	$('#request').text('Request Doctor');
+    	$('#request').prop('disabled', false);
         $('#request').click(handleRequestClick);
         $('#signOut').click(function() {
-            WildRydes.signOut();
+            Profiles.signOut();
             alert("You have been signed out.");
             window.location = "signin.html";
         });
-        $(WildRydes.map).on('pickupChange', handlePickupChanged);
 
-        WildRydes.authToken.then(function updateAuthMessage(token) {
+        Profiles.authToken.then(function updateAuthMessage(token) {
             if (token) {
                 displayUpdate('You are authenticated. Click to see your <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
                 $('.authToken').text(token);
@@ -70,15 +109,13 @@ WildRydes.map = WildRydes.map || {};
         }
     });
 
-    function handlePickupChanged() {
-        var requestButton = $('#request');
-        requestButton.prop('disabled', false);
-    }
-
     function handleRequestClick(event) {
-        var pickupLocation = WildRydes.map.selectedPoint;
+        var pickupLocation = Profiles.selectedPoint = {
+                latitude: -111.04,
+                longitude: 45.67
+            };
         event.preventDefault();
-        requestdoctor(pickupLocation);
+        requestDoctor(pickupLocation);
     }
 
     function displayUpdate(text) {
