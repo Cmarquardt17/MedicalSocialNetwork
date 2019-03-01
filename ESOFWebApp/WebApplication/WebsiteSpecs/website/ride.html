@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8">
+	<meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <title>Medical App</title>
     <meta charset="utf-8">
@@ -10,16 +9,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Serverless web application example">
     <meta name="author" content="">
-
-
+	<link rel="stylesheet" href="css/font.css">
+	<link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://js.arcgis.com/4.3/esri/css/main.css">
     <link rel="stylesheet" href="css/ride.css">
     <link rel="stylesheet" href="css/message.css">
 </head>
-
 <body>
-
     <div class="info panel panel-default">
         <div class="panel-heading">
             <button id="request" class="btn btn-primary">Friend Dr. Sluggett</button>
@@ -41,19 +38,15 @@
             </ol>
         </div>
     </div>
-
-
     <div class="container">
-      <div class="avatar-flip">
-        <img src="http://media.idownloadblog.com/wp-content/uploads/2012/04/Phil-Schiller-headshot-e1362692403868.jpg" height="150" width="150">
-      </div>
-      <h2>John Smith</h2>
-      <h4>HOVER OVER CONTAINER</h4>
-      <p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas sed diam eget risus varius blandit sit amet non magna ip sum dolore.</p>
-      <p>Connec dolore ipsum faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla.</p>
+		<div class="avatar-flip">
+			<img src="http://media.idownloadblog.com/wp-content/uploads/2012/04/Phil-Schiller-headshot-e1362692403868.jpg" height="150" width="150">
+		</div>
+		<h2>John Smith</h2>
+		<h4>HOVER OVER CONTAINER</h4>
+		<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Maecenas sed diam eget risus varius blandit sit amet non magna ip sum dolore.</p>
+		<p>Connec dolore ipsum faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla.</p>
     </div>
-
-
     <div id="noApiMessage" class="configMessage" style="display: none;">
         <div class="backdrop"></div>
         <div class="panel panel-default">
@@ -67,7 +60,6 @@
             </div>
         </div>
     </div>
-
     <div id="noCognitoMessage" class="configMessage" style="display: none;">
         <div class="backdrop"></div>
         <div class="panel panel-default">
@@ -79,12 +71,10 @@
             </div>
         </div>
     </div>
-
-    <div id="main">
+	<div id="main">
         <div id="map">
         </div>
     </div>
-
     <div id="authTokenModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="authToken">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -101,8 +91,26 @@
             </div>
         </div>
     </div>
-
-
+	<footer class="site-footer">
+		<div class="row column">
+			<nav class="footer-nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="faq.html">FAQ</a></li>
+					<li><a href="apply.html">Apply</a></li>
+					<li><a href="devs.html">Meet the Developers</a></li>
+					<li><a href="login.html">Log In</a></li>
+					<li><a href="profilePage2.html">Profile Page</a></li>
+				</ul>
+			</nav>
+		</div>
+		<div class="row column">
+			<div class="footer-legal">
+				&copy;WildRydes Inc<br>
+				All Rights Reserved
+			</div>
+		</div>
+	</footer>
     <script src="js/vendor/jquery-3.1.0.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
     <script src="js/vendor/aws-cognito-sdk.min.js"></script>
@@ -110,8 +118,6 @@
     <script src="https://js.arcgis.com/4.3/"></script>
     <script src="js/config.js"></script>
     <script src="js/cognito-auth.js"></script>
-    <!--<script src="js/esri-map.js"></script>-->
     <script src="js/ride.js"></script>
 </body>
-
 </html>
