@@ -1,12 +1,26 @@
 language: node_js
-
 node_js:
-  - "iojs"
-  - "7"
-  
+  - "9"
+dist: trusty
+sudo: required
+addons:
+  chrome: stable
+  hostname: localhost
+before_install:
+  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
+before_script:
+  - npm run dev &
+cache:
+  yarn: true
+  directories:
+    - node_modules
+install:
+  - npm install
 script:
-  -ant build
-  
+  - cd client/ && npm install && npm run test
+
+
+
 notifications:
   email:
     recipients:
