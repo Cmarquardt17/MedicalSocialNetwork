@@ -1,4 +1,6 @@
 
+language: javascript
+
 notifications:
   email:
     recipients:
