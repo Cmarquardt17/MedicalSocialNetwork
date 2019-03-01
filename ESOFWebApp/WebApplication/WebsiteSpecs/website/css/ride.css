@@ -15,18 +15,8 @@ body {
   -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
   -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
   text-align: center;
-}/*
-.container:hover .avatar-flip {
-  transform: rotateY(180deg);
-  -webkit-transform: rotateY(180deg);
 }
-.container:hover .avatar-flip img:first-child {
-  opacity: 0;
-}
-.container:hover .avatar-flip img:last-child {
-  opacity: 1;
-}
-*/
+
 .avatar-flip {
   border-radius: 100px;
   overflow: hidden;

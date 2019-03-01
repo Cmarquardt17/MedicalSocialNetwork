@@ -1,15 +1,15 @@
-html{
+html {
 	font-family: sans-serif;
 	line-height: 1.15;
 	-ms-text-size-adjust: 100%;
 	-webkit-text-size-adjust: 100%
 }
 
-body{
-	margin:0
+body {
+	margin: 0
 }
 
-h1{
+h1 {
 	bottom: 5%;
 }
 
@@ -19,7 +19,6 @@ footer,
 header,
 nav,
 section {
-	
 	display: block
 }
 
@@ -239,14 +238,11 @@ template {
 	display: none
 }
 
-
-
 .footer-nav ul,
 .site-nav ul {
 	margin: 0;
 	padding: 0;
 	list-style: none
-	
 }
 
 *,
@@ -291,7 +287,7 @@ h5 {
 	}
 }
 
-h4{
+h4 {
 	padding-left: 2%;
 }
 
@@ -519,8 +515,6 @@ img {
 	font-size: 1.125rem
 }
 
-
-
 .git-button {
 	-webkit-appearance: none;
 	-moz-appearance: none;
@@ -539,7 +533,6 @@ img {
 	transform: translateX(-50%);
 	font-weight: 700
 }
-
 
 .home-story {
 	background: url(../images/wr-home-about.jpg) no-repeat bottom;
@@ -1075,21 +1068,16 @@ img {
 }
 
 .user {
-  width: 170px;
-  height: 170px;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-  
-  
+	width: 170px;
+	height: 170px;
+	border-radius: 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 .one {
-	
-  background-image: url('../images/profilepicb.PNG');
+	background-image: url('../images/profilepicb.PNG');
 }
-
 
 .addF {
 	text-align: center;
@@ -1110,27 +1098,25 @@ img {
 }
 
 .backgroundinfo {
-	
 	position: absolute;
-  clear: bottom;
-  margin-bottom: 10px;
-  margin-left: 6.5%;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;	
+	clear: bottom;
+	margin-bottom: 10px;
+	margin-left: 6.5%;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
 }
 
 .backgroundinfo input {
-  
-  background-color: #FFFFFF;
-  border: 1px solid #D6D9DC;
-  border-radius: 3px;
-  width: 100%;
-  padding: 20px;
-  font-size: 14px;
-  margin-top: 0%;
-  margin-bottom: 10px;
-  margin-left: 2.5%;
+	background-color: #FFFFFF;
+	border: 1px solid #D6D9DC;
+	border-radius: 3px;
+	width: 100%;
+	padding: 20px;
+	font-size: 14px;
+	margin-top: 0%;
+	margin-bottom: 10px;
+	margin-left: 2.5%;
 }
 
 .backgroundinfo label {
@@ -1149,82 +1135,79 @@ img {
 }
 
 .short-row {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  flex-wrap: wrap;
-
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	flex-wrap: wrap;
 }
 
 .short-row input {
-  background-color: #FFFFFF;
-  border: 1px solid #D6D9DC;
-  border-radius: 3px;
-  width: 20%;
-  padding: 7px;
-  font-size: 14px;
-  margin-top: 3px;
-  margin-bottom: 5px;
-  margin-left: 15px;
+	background-color: #FFFFFF;
+	border: 1px solid #D6D9DC;
+	border-radius: 3px;
+	width: 20%;
+	padding: 7px;
+	font-size: 14px;
+	margin-top: 3px;
+	margin-bottom: 5px;
+	margin-left: 15px;
 }
 
 .short-row label {
-  margin-bottom: 5px;
-  margin-top: 10px;
-  margin-left: 15px;
+	margin-bottom: 5px;
+	margin-top: 10px;
+	margin-left: 15px;
 }
 
 .longer-row {
-  margin-bottom: 20px;
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  flex-wrap: wrap;
+	margin-bottom: 20px;
+	display: flex;
+	justify-content: flex-start;
+	flex-direction: column;
+	flex-wrap: wrap;
 }
 
 .longer-row input[type='text'] {
-  background-color: #FFFFFF;
-  border: 1px solid #D6D9DC;
-  border-radius: 3px;
-  width: 40%;
-  padding: 7px;
-  font-size: 14px;
-  margin-left: 15px;
+	background-color: #FFFFFF;
+	border: 1px solid #D6D9DC;
+	border-radius: 3px;
+	width: 40%;
+	padding: 7px;
+	font-size: 14px;
+	margin-left: 15px;
 }
 
 .longer-row label {
-  margin-bottom: 10px;
-  margin-top: 1px;
-  margin-left: 15px;
+	margin-bottom: 10px;
+	margin-top: 1px;
+	margin-left: 15px;
 }
 
 .page-home {
-  position: realtive;
-  background: #0CC8C8;
-  padding: 10px;
+	position: realtive;
+	background: #0CC8C8;
+	padding: 10px;
 }
 
 .site-header {
 	background: white;
 	padding-top: 20%;
 	padding-bottom: 1%;
-	margin-bottom:0px;
+	margin-bottom: 0px;
 	background-size: cover;
-	
 	margin: 0;
-	
 	position: relative
 }
 
 .module-border-wrap {
-  padding: 1rem;
-  position: relative;
-  background: #0CC8C8;
-  padding: 10px;
+	padding: 1rem;
+	position: relative;
+	background: #0CC8C8;
+	padding: 10px;
 }
 
-.title2{
+.title2 {
 	background: #fff;
 	border: 1px solid transparent;
 	border-radius: 1.25rem;
@@ -1236,10 +1219,9 @@ img {
 }
 
 .module {
-  
-  background: white;
-  color: white;
-  padding: 2rem;
+	background: white;
+	color: white;
+	padding: 2rem;
 }
 
 .page-home .site-header .title {
@@ -1258,8 +1240,8 @@ img {
 	}
 }
 
-.sT2{
-	padding-left:15px;
+.sT2 {
+	padding-left: 15px;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -1392,4 +1374,3 @@ img {
 	background: url(../images/money.png) no-repeat;
 	width: 14.75rem
 }
-

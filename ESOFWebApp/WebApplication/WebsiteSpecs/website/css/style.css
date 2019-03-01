@@ -5,7 +5,8 @@
 
 body {
 	font-size: 62.5%;
-	font-family:   font-family: "fairplex-wide";;
+	font-family: font-family: "fairplex-wide";
+	;
 	background: url(images/stripe.png) repeat;
 }
 
@@ -29,7 +30,8 @@ p {
 	margin-top: 25px;
 }
 
-#contact-area input, #contact-area textarea {
+#contact-area input,
+#contact-area textarea {
 	padding: 5px;
 	width: 471px;
 	font-size: 1.4em;
@@ -42,7 +44,8 @@ p {
 	height: 90px;
 }
 
-#contact-area textarea:focus, #contact-area input:focus {
+#contact-area textarea:focus,
+#contact-area input:focus {
 	border: 2px solid #900;
 }
 
