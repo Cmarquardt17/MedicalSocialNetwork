@@ -18,7 +18,7 @@ var Profiles = window.MSN || {};
     function requestDoctor(pickupLocation) {
         $.ajax({
             method: 'POST',
-            url: _config.api.invokeUrl + '/ride',
+            url: _config.api.invokeUrl + '/doctor',
             headers: {
                 Authorization: authToken
             },
