@@ -1,3 +1,4 @@
+var AWS = require('aws-sdk');
 /*global WildRydes _config*/
 
 var WildRydes = window.WildRydes || {};
@@ -15,7 +16,7 @@ WildRydes.map = WildRydes.map || {};
         alert(error);
         window.location.href = '/signin.html';
     });
-    function requestdoctor(pickupLocation) {
+    function requestdoctor() {
         $.ajax({
             method: 'POST',
             url: _config.api.invokeUrl + '/ride',
@@ -23,14 +24,10 @@ WildRydes.map = WildRydes.map || {};
                 Authorization: authToken
             },
             data: JSON.stringify({
-                PickupLocation: {
-                    Latitude: pickupLocation.latitude,
-                    Longitude: pickupLocation.longitude
-                }
             }),
             contentType: 'application/json',
-            success: completeRequest,
-            error: function ajaxError(jqXHR, textStatus, errorThrown) {
+            success: completeRequest, error: function ajaxError(jqXHR, textStatus, errorThrown) 
+            {
                 console.error('Error requesting ride: ', textStatus, ', Details: ', errorThrown);
                 console.error('Response: ', jqXHR.responseText);
                 alert('An error occured when requesting your doctor:\n' + jqXHR.responseText);
@@ -44,9 +41,8 @@ WildRydes.map = WildRydes.map || {};
         console.log('Response received from API: ', result);
         doctor = result.Doctor;
         pronoun = doctor.Gender === 'Male' ? 'his' : 'her';
-        displayUpdate(doctor.Name + ', your ' + doctor.Color + ' doctor, is on ' + pronoun + ' way.');
         animateArrival(function animateCallback() {
-            displayUpdate(doctor.Name + ' has arrived. Giddy up!');
+            displayUpdate('You are now friends with' + doctor.Name);
             WildRydes.map.unsetLocation();
             $('#request').prop('disabled', 'disabled');
             $('#request').text('Set Pickup');
