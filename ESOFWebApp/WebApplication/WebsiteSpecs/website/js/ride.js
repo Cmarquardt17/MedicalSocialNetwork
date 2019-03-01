@@ -23,10 +23,6 @@ WildRydes.map = WildRydes.map || {};
                 Authorization: authToken
             },
             data: JSON.stringify({
-                PickupLocation: {
-                    Latitude: pickupLocation.latitude,
-                    Longitude: pickupLocation.longitude
-                }
             }),
             contentType: 'application/json',
             success: completeRequest,
@@ -44,9 +40,8 @@ WildRydes.map = WildRydes.map || {};
         console.log('Response received from API: ', result);
         doctor = result.Doctor;
         pronoun = doctor.Gender === 'Male' ? 'his' : 'her';
-        displayUpdate(doctor.Name + ', your ' + doctor.Color + ' doctor, is on ' + pronoun + ' way.');
         animateArrival(function animateCallback() {
-            displayUpdate(doctor.Name + ' has arrived. Giddy up!');
+            displayUpdate('You are now friends!');
             WildRydes.map.unsetLocation();
             $('#request').prop('disabled', 'disabled');
             $('#request').text('Set Pickup');
