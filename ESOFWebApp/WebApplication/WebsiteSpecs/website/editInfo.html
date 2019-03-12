@@ -33,39 +33,69 @@
 <form>
     <div class="section"><span>1</span>First Name & Address</div>
     <div class="inner-wrap">
-        <label>Your Full Name <input type="text" name="field1" /></label>
-        <label>Address <textarea name="field2"></textarea></label>
+        <label>First Name <input type="text" id="fInput" name="field1" /></label>
+        <label>Middle Name <input type="text" id="mInput" name="field1" /></label>
+        <label>Last Name <input type="text" id="lInput" name="field1" /></label>
+        <label>Address <textarea  id="addressInput" name="field1"></textarea></label>
     </div>
 
     <div class="section"><span>2</span>Email & Phone</div>
     <div class="inner-wrap">
-        <label>Email Address <input type="email" name="field3" /></label>
-        <label>Phone Number <input type="text" name="field4" /></label>
+        <label>Email Address <input  id="emailInput" type="email" name="field1" /></label>
+        <label>Phone Number <input   id="numberInput" type="phone number" name="field1" /></label>
     </div>
 
-    <div class="section"><span>3</span>Passwords</div>
-        <div class="inner-wrap">
-        <label>Password <input type="password" name="field5" /></label>
-        <label>Confirm Password <input type="password" name="field6" /></label>
-    </div>
-    
+
     
      <div class="section"><span>4</span>Date of Birth</div>
-    <div class="inner-wrap">
-        <label>Date of Birth <input type="birthday" name="field7" /></label>
+    	<div class="inner-wrap">
+        <label>Date of Birth <input type="birthday"  id="birthdayInput" name="field1" /></label>
         
     </div>
     
-    
-     <div class="section"><span>6</span>Emergency Contact Information</div>
-    <div class="inner-wrap">
-        <label>Name<input type="email" name="field8" /></label>
-        <label>Relation <input type="text" name="field9" /></label>
-        <label>Phone Number <input type="text" name="field10" /></label>
-        <label>Address <input type="text" name="field11" /></label>
+    <div class="section"><span>5</span>Gender</div>
+    	<div class="inner-wrap">
+        <label>Male or Female <input type="gender"  id="genderInput" name="field1" /></label>
+        
+    </div>
+       
+    <div class="section"><span>6</span>Social Security Number</div>
+    	<div class="inner-wrap">
+        <label>SSN (XXXXXXXXX) <input type="ssn"  id="ssnInput" name="field1" /></label>
         
     </div>
     
+    <div class="section"><span>7</span>Race</div>
+    	<div class="inner-wrap">
+        <label> American Indian <br> Asian <br> African American<br> 
+        White <br> Native Hawaiian <br> Other<br> <input type="race"  id="raceInput" name="field1" /></label>
+        
+    </div>
+    
+     <div class="section"><span>8</span>Emergency Contact Information</div>
+    <div class="inner-wrap">
+        <label>Name, Relation, Phone Number, Address<input type="email"  id="eInfoInput" name="field1" /></label>
+    </div>
+     
+     <div class="section"><span>9</span>Major Surgery</div>
+    <div class="inner-wrap">
+        <label>Have you had any major surgeries? Yes/No <br> <input type="email"  id="msInput" name="field1" /></label>
+    </div>
+    
+     <div class="section"><span>10</span>Smoking History</div>
+    <div class="inner-wrap">
+        <label>Do you currently smoke? Yes/No <br> <input type="email"  id="smokeInput" name="field1" /></label>
+    </div>
+    
+     <div class="section"><span></span>Medications</div>
+    <div class="inner-wrap">
+        <label>List all current and past medications <input type="email"  id="medInput" name="field1" /></label>
+    </div>
+    
+    <div class="section"><span></span>Conditions</div>
+    <div class="inner-wrap">
+        <label>List all current and past conditions <input type="email"  id="condInput" name="field1" /></label>
+    </div>
     
     <div class="button-section">
      <input type="submit" name="Sign Up" />
