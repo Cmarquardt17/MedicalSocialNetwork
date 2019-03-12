@@ -8,11 +8,11 @@ var Profiles = window.MSN || {};
         if (token) {
             authToken = token;
         } else {
-            window.location.href = '/signin.html';
+            window.location.href = '/login.html';
         }
     }).catch(function handleTokenError(error) {
         alert(error);
-        window.location.href = '/signin.html';
+        window.location.href = '/login.html';
     });
 
     function requestDoctor(pickupLocation) {
@@ -94,7 +94,7 @@ var Profiles = window.MSN || {};
         $('#signOut').click(function() {
             Profiles.signOut();
             alert("You have been signed out.");
-            window.location = "signin.html";
+            window.location = "login.html";
         });
 
         Profiles.authToken.then(function updateAuthMessage(token) {

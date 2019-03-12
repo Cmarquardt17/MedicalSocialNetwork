@@ -3,7 +3,7 @@
 var PROS = window.MSN || {};
 
 (function scopeWrapper($) {
-    var signinUrl = '/signin.html';
+    var signinUrl = '/login.html';
 
     var poolData = {
         UserPoolId: _config.cognito.userPoolId,
