@@ -1,10 +1,10 @@
-/*global MSN _config*/
+/*global WildRydes _config*/
 
-var Profiles = window.MSN || {};
+var WildRydes = window.WildRydes || {};
 
 (function rideScopeWrapper($) {
     var authToken;
-    Profiles.authToken.then(function setAuthToken(token) {
+    WildRydes.authToken.then(function setAuthToken(token) {
         if (token) {
             authToken = token;
         } else {
@@ -14,7 +14,6 @@ var Profiles = window.MSN || {};
         alert(error);
         window.location.href = '/login.html';
     });
-
     function requestDoctor(pickupLocation) {
         $.ajax({
             method: 'POST',
@@ -39,7 +38,7 @@ var Profiles = window.MSN || {};
     }
 
 	$(function profileFill(){
-	var pickupLocation = Profiles.selectedPoint = {
+	var pickupLocation = WildRydes.selectedPoint = {
                 latitude: -111.04,
                 longitude: 45.67
             };
@@ -47,6 +46,7 @@ var Profiles = window.MSN || {};
 	});
 
 	function requestUserName(pickupLocation) {
+    console.log('we are trying to get the requestName');
 		$.ajax({
             method: 'POST',
             url: _config.api.invokeUrl + '/user',
@@ -67,9 +67,11 @@ var Profiles = window.MSN || {};
                 alert('An error occured when requesting a user:\n' + jqXHR.responseText);
             }
         });
+        console.log('we are at the end for requestUserName');
 	}
 
 	function fillProfile(result) {
+    console.log('We got to fillProfile');
         var user;
         console.log('Response received from API: ', result);
         user = result.User;
@@ -77,6 +79,7 @@ var Profiles = window.MSN || {};
     }
 
     function completeRequest(result) {
+      console.log('We got to completeRequest');
         var doctor;
         var pronoun;
         console.log('Response received from API: ', result);
@@ -87,17 +90,17 @@ var Profiles = window.MSN || {};
 
     // Register click handler for #request button
     $(function onDocReady() {
-
+      console.log('We got to onDocReady');
     	$('#request').text('Request Doctor');
     	$('#request').prop('disabled', false);
         $('#request').click(handleRequestClick);
         $('#signOut').click(function() {
-            Profiles.signOut();
+            WildRydes.signOut();
             alert("You have been signed out.");
             window.location = "login.html";
         });
 
-        Profiles.authToken.then(function updateAuthMessage(token) {
+        WildRydes.authToken.then(function updateAuthMessage(token) {
             if (token) {
                 displayUpdate('You are authenticated. Click to see your <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
                 $('.authToken').text(token);
@@ -110,7 +113,7 @@ var Profiles = window.MSN || {};
     });
 
     function handleRequestClick(event) {
-        var pickupLocation = Profiles.selectedPoint = {
+        var pickupLocation = WildRydes.selectedPoint = {
                 latitude: -111.04,
                 longitude: 45.67
             };

@@ -1,6 +1,6 @@
-/*global MSN _config AmazonCognitoIdentity AWSCognito*/
+/*global WildRydes _config AmazonCognitoIdentity AWSCognito*/
 
-var PROS = window.MSN || {};
+var WildRydes = window.WildRydes || {};
 
 (function scopeWrapper($) {
     var signinUrl = '/login.html';
@@ -25,11 +25,11 @@ var PROS = window.MSN || {};
         AWSCognito.config.region = _config.cognito.region;
     }
 
-    PROS.signOut = function signOut() {
+    WildRydes.signOut = function signOut() {
         userPool.getCurrentUser().signOut();
     };
 
-    PROS.authToken = new Promise(function fetchCurrentAuthToken(resolve, reject) {
+    WildRydes.authToken = new Promise(function fetchCurrentAuthToken(resolve, reject) {
         var cognitoUser = userPool.getCurrentUser();
 
         if (cognitoUser) {
