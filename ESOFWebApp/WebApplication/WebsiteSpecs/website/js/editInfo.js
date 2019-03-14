@@ -8,19 +8,20 @@ var WildRydes = window.WildRydes || {};
         if (token) {
             authToken = token;
         } else {
-            window.location.href = '/login.html';
+            window.location.href = '/profile.html';
         }
     }).catch(function handleTokenError(error) {
         alert(error);
-        window.location.href = '/login.html';
+        window.location.href = '/profile.html';
     });
-    function saveInfo(pickupLocation) {
+    function requestInfo(pickupLocation) {
+    console.log('We got to requestInfo');
         $.ajax({
             method: 'POST',
-            url: _config.api.invokeUrl + '/userInfo',
+            url: _config.api.invokeUrl + '/addinfo',
             headers: {
                 Authorization: authToken
-            },
+            }, 
             data: JSON.stringify({
                 PickupLocation: {
                     Latitude: pickupLocation.latitude,
@@ -28,31 +29,50 @@ var WildRydes = window.WildRydes || {};
                 }
             }),
             contentType: 'application/json',
-            success: completeInfo,
+            success: completeRequest,
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
-                console.error('Error requesting ride: ', textStatus, ', Details: ', errorThrown);
+                console.error('Error requesting information: ', textStatus, ', Details: ', errorThrown);
                 console.error('Response: ', jqXHR.responseText);
-                alert('An error occured when requesting your information:\n' + jqXHR.responseText);
+                alert('An error occured when requesting your info:\n' + jqXHR.responseText);
             }
         });
     }
-    
-    
- function completeRequest(result) {
-      console.log('We got to completeInfo');
-        var name;
-        var pronoun;
+
+    function completeRequest(result) {
+      console.log('We got to completeRequest');
+        var firstName;
         console.log('Response received from API: ', result);
-		
+        firstName = result.fName;
+        displayUpdate('This is your name' + firstName.fName);
     }
-    
+
+    // Register click handler for #request button
+    $(function onDocReady() {
+      console.log('We got to onDocReady');
+    	$('#submit').text('Request Doc');
+    	$('#submit').prop('disabled', false);
+        $('#submit').click(handleRequestClick);
+
+        WildRydes.authToken.then(function updateAuthMessage(token) {
+            if (token) {
+                displayUpdate('You are authenticated. Click to see your <a href="#authTokenModal" data-toggle="modal">auth token</a>.');
+                $('.authToken').text(token);
+            }
+        });
+
+        if (!_config.api.invokeUrl) {
+            $('#noApiMessage').show();
+        }
+    });
+
     function handleRequestClick(event) {
+    console.log('We are at handleRequestClick');
         var pickupLocation = WildRydes.selectedPoint = {
                 latitude: -111.04,
                 longitude: 45.67
             };
         event.preventDefault();
-        completeInfo(pickupLocation);
+        requestInfo(pickupLocation);
     }
 
     function displayUpdate(text) {
