@@ -14,7 +14,7 @@ var WildRydes = window.WildRydes || {};
         alert(error);
         window.location.href = '/login.html';
     });
-    function saveInfo(pickupLocation) {
+    function saveInfo(FirstName) {
         $.ajax({
             method: 'POST',
             url: _config.api.invokeUrl + '/userInfo',
@@ -22,10 +22,7 @@ var WildRydes = window.WildRydes || {};
                 Authorization: authToken
             },
             data: JSON.stringify({
-                PickupLocation: {
-                    Latitude: pickupLocation.latitude,
-                    Longitude: pickupLocation.longitude
-                }
+                FirstName: firstName
             }),
             contentType: 'application/json',
             success: completeInfo,
@@ -36,17 +33,18 @@ var WildRydes = window.WildRydes || {};
             }
         });
     }
-    
-    
- function completeRequest(result) {
+
+
+ function completeInfo(result) {
       console.log('We got to completeInfo');
         var name;
         var pronoun;
         console.log('Response received from API: ', result);
-		
+
     }
-    
+
     function handleRequestClick(event) {
+        var FirstName = "Cole";
         var pickupLocation = WildRydes.selectedPoint = {
                 latitude: -111.04,
                 longitude: 45.67
