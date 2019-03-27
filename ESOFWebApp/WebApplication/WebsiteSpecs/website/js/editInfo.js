@@ -21,12 +21,9 @@ var WildRydes = window.WildRydes || {};
             url: _config.api.invokeUrl + '/addinfo',
             headers: {
                 Authorization: authToken
-            }, 
+            },
             data: JSON.stringify({
-                PickupLocation: {
-                    Latitude: pickupLocation.latitude,
-                    Longitude: pickupLocation.longitude
-                }
+                FirstName: firstName
             }),
             contentType: 'application/json',
             success: completeRequest,
