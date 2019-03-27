@@ -15,7 +15,13 @@ def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        user = User(username=form.username.data, email=form.email.data, password=hashed_password)
+        user = User(username=form.username.data, email=form.email.data, password=hashed_password,
+                    firstName=form.firstName.data, middleName=form.middleName.data,
+                    lastName=form.lastName.data, address=form.address.data,
+                    phone=form.phone.data, dateOfBirth=form.dateOfBirth.data,
+                    gender=form.gender.data, ssn=form.ssn.data, race=form.race.data,
+                    emergency=form.emergency.data, majorSurgery=form.majorSurgery.data,
+                    smoking=form.emergency.data)
         db.session.add(user)
         db.session.commit()
         flash('Your account has been created! You are now able to log in.', 'success')
@@ -52,12 +58,36 @@ def account():
             current_user.image_file = picture_file
         current_user.username = form.username.data
         current_user.email = form.email.data
+        current_user.firstName = form.firstName.data
+        current_user.middleName = form.middleName.data
+        current_user.lastName = form.lastName.data
+        current_user.address = form.address.data
+        current_user.phone = form.phone.data
+        current_user.dateOfBirth = form.dateOfBirth.data
+        current_user.gender = form.gender.data
+        current_user.ssn = form.ssn.data
+        current_user.race = form.race.data
+        current_user.emergency = form.emergency.data
+        current_user.majorSurgery = form.majorSurgery.data
+        current_user.smoking = form.smoking.data
         db.session.commit()
         flash('Your account has been updated!', 'success')
         return redirect(url_for('users.account'))
     elif request.method == 'GET':
         form.username.data = current_user.username
         form.email.data = current_user.email
+        form.firstName.data = current_user.firstName
+        form.middleName.data = current_user.middleName
+        form.lastName.data = current_user.lastName
+        form.address.data = current_user.address
+        form.phone.data = current_user.phone
+        form.dateOfBirth.data = current_user.dateOfBirth
+        form.gender.data = current_user.gender
+        form.ssn.data = current_user.ssn
+        form.race.data = current_user.race
+        form.emergency.data = current_user.emergency
+        form.majorSurgery.data = current_user.majorSurgery
+        form.smoking.data = current_user.smoking
 
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     return render_template('account.html', title='Account',

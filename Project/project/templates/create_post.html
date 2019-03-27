@@ -6,29 +6,42 @@
         <fieldset class="form-group">
           <legend class="border-bottom mb-4">{{ legend }}</legend>
           <div class="form-group">
-            {{ form.title.label(class="form-control-label") }}
-            {% if form.title.errors %}
-              {{ form.title(class="form-control form-control-lg is-invalid") }}
+            {{ form.condition.label(class="form-control-label") }}
+            {% if form.condition.errors %}
+              {{ form.condition(class="form-control form-control-lg is-invalid") }}
               <div class="invalid-feedback">
-                {% for error in form.title.errors %}
+                {% for error in form.condition.errors %}
                   <span>{{ error }}</span>
                 {% endfor %}
               </div>
             {% else %}
-              {{ form.title(class="form-control form-control-lg") }}
+              {{ form.condition(class="form-control form-control-lg") }}
             {% endif %}
           </div>
           <div class="form-group">
-            {{ form.content.label(class="form-control-label") }}
-            {% if form.content.errors %}
-              {{ form.content(class="form-control form-control-lg is-invalid") }}
+            {{ form.medication.label(class="form-control-label") }}
+            {% if form.medication.errors %}
+              {{ form.medication(class="form-control form-control-lg is-invalid") }}
               <div class="invalid-feedback">
-                {% for error in form.content.errors %}
+                {% for error in form.medication.errors %}
                   <span>{{ error }}</span>
                 {% endfor %}
               </div>
             {% else %}
-              {{ form.content(class="form-control form-control-lg") }}
+              {{ form.medication(class="form-control form-control-lg") }}
+            {% endif %}
+          </div>
+          <div class="form-group">
+            {{ form.description.label(class="form-control-label") }}
+            {% if form.description.errors %}
+              {{ form.description(class="form-control form-control-lg is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.description.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.description(class="form-control form-control-lg") }}
             {% endif %}
           </div>
         </fieldset>

@@ -12,7 +12,8 @@ posts = Blueprint('posts', __name__)
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(title=form.title.data, content=form.content.data, author=current_user)
+        post = Post(condition=form.condition.data, medication=form.medication.data,
+                    description=form.description.data, author=current_user)
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created!', 'success')
@@ -23,7 +24,7 @@ def new_post():
 @posts.route("/post/<int:post_id>")
 def post(post_id):
     post = Post.query.get_or_404(post_id)
-    return render_template('post.html', title=post.title, post=post)
+    return render_template('post.html', condition=post.condition, post=post)
 
 @posts.route("/post/<int:post_id>/update", methods=['GET', 'POST'])
 @login_required
@@ -33,14 +34,16 @@ def update_post(post_id):
         abort(403)
     form = PostForm()
     if form.validate_on_submit():
-        post.title = form.title.data
-        post.content = form.content.data
+        post.condition = form.condition.data
+        post.medication = form.medication.data
+        post.description = form.description.data
         db.session.commit()
         flash('Your post has been updated!', 'success')
         return redirect(url_for('posts.post', post_id=post.id))
     elif request.method == 'GET':
-        form.title.data = post.title
-        form.content.data = post.content
+        form.condition.data = post.condition
+        form.medication.data = post.medication
+        form.description.data = post.description
     return render_template('create_post.html', title='Update Post', form=form,
                            legend='Update Post')
 

@@ -17,6 +17,24 @@ class RegistrationForm(FlaskForm):
                             validators=[DataRequired(), Length(min=2, max=20)])
     lastName = StringField('Last Name',
                             validators=[DataRequired(), Length(min=2, max=20)])
+    address = StringField('Address',
+                            validators=[DataRequired(), Length(min=2, max=50)])
+    phone = StringField('Phone',
+                            validators=[DataRequired(), Length(min=2, max=10)])
+    dateOfBirth = StringField('Date of Birth',
+                            validators=[DataRequired(), Length(min=2, max=20)])
+    gender = StringField('Gender',
+                            validators=[DataRequired(), Length(min=2, max=20)])
+    ssn = StringField('Social Security Number',
+                            validators=[DataRequired(), Length(min=9, max=9)])
+    race = StringField('Race',
+                            validators=[DataRequired(), Length(min=2, max=20)])
+    emergency = StringField('Emergency Contact Info(Name, Relation, Phone, Address)',
+                            validators=[DataRequired(), Length(min=2, max=120)])
+    majorSurgery = StringField('Major Surgeries(Seperate with commans)',
+                            validators=[DataRequired(), Length(min=2, max=20)])
+    smoking = StringField('Smoking (Yes/No)',
+                            validators=[DataRequired(), Length(min=2, max=20)])
     password = PasswordField('Password', validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password',
                                     validators=[DataRequired(), EqualTo('password')])
@@ -45,6 +63,30 @@ class UpdateAccountForm(FlaskForm):
     email = StringField('Email',
                         validators=[DataRequired(), Email()])
     picture = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png'])])
+    firstName = StringField('First Name',
+                            validators=[DataRequired(), Length(min=2, max=20)])
+    middleName = StringField('Middle Name',
+                            validators=[DataRequired(), Length(min=2, max=20)])
+    lastName = StringField('Last Name',
+                            validators=[DataRequired(), Length(min=2, max=20)])
+    address = StringField('Address',
+                            validators=[DataRequired(), Length(min=2, max=50)])
+    phone = StringField('Phone',
+                            validators=[DataRequired(), Length(min=2, max=10)])
+    dateOfBirth = StringField('Date of Birth',
+                            validators=[DataRequired(), Length(min=2, max=20)])
+    gender = StringField('Gender',
+                            validators=[DataRequired(), Length(min=2, max=20)])
+    ssn = StringField('Social Security Number',
+                            validators=[DataRequired(), Length(min=9, max=9)])
+    race = StringField('Race',
+                            validators=[DataRequired(), Length(min=2, max=20)])
+    emergency = StringField('Emergency Contact Info(Name, Relation, Phone, Address)',
+                            validators=[DataRequired(), Length(min=2, max=120)])
+    majorSurgery = StringField('Major Surgeries(Seperate with commans)',
+                            validators=[DataRequired(), Length(min=2, max=20)])
+    smoking = StringField('Smoking (Yes/No)',
+                            validators=[DataRequired(), Length(min=2, max=20)])
     submit = SubmitField('Update')
 
     def validate_username(self, username):
