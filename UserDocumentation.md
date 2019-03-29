@@ -29,9 +29,10 @@ Our project is a medical social network that will allow a patient to connect or 
 	To report a bug, there will be a contact us button on the bottom of each webpage of the social network. When clicked on, the contact us page will bring the user to a page that asks for their name, email and the issue. A resource for how to write a good bug report is listed below:  https://bugs.java.com/bugdatabase/. 
 
 <h2>Currently Working</h2>
-    For our Beta Release, the functionality of our webApp is listed below:
+    For our Complete Feature Release, the functionality of our webApp is listed below:
     * Sign Up
     * Login
     * Contact Us
-    * Add Doctor
+    * Add Friend and UnFriend on both Clinican and Patient side
+    * Sharing Information
 
