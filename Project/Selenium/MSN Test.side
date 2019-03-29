@@ -2,7 +2,7 @@
   "id": "e33cb70e-7314-4c36-bbfe-7c449cc5cbd3",
   "version": "2.0",
   "name": "MSN Test",
-  "url": "http://localhost:5000",
+  "url": "https://www.medspace.tk/home",
   "tests": [{
     "id": "afd22535-5a81-410f-827f-0dd812a5b051",
     "name": "Register",
@@ -942,6 +942,114 @@
         ["xpath=//a[contains(@href, '/register')]", "xpath:href"],
         ["xpath=//div[2]/a[2]", "xpath:position"],
         ["xpath=//a[contains(.,'Register')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "a006a4c6-8ee2-4f0f-a93e-e4b22bc42e00",
+    "name": "Friends",
+    "commands": [{
+      "id": "80d22519-9cbf-4ff3-b2a2-4924b190f692",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.medspace.tk/home",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7191ce01-0a3e-4e3f-99c7-175a74b6837e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1382x744",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd652fbd-19e6-42dd-9ba8-f99b4a7120f6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Friends",
+      "targets": [
+        ["linkText=Friends", "linkText"],
+        ["css=.mr-auto > .nav-item:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Friends')]", "xpath:link"],
+        ["xpath=//div[@id='navbarToggle']/div/a[2]", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/friends')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Friends')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "11b7a084-8d48-4df3-ac8a-cab7e14b0fa0",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Friend",
+      "targets": [
+        ["linkText=Friend", "linkText"],
+        ["css=.media:nth-child(3) .article-content", "css:finder"],
+        ["xpath=(//a[contains(text(),'Friend')])[2]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/friend/DoctorDoe')]", "xpath:href"],
+        ["xpath=//article/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d138641-a1be-4891-99d2-79f55b86476e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.media:nth-child(6) .article-content",
+      "targets": [
+        ["css=.media:nth-child(6) .article-content", "css:finder"],
+        ["xpath=(//a[contains(text(),'Friend')])[3]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/friend/Cmarquardt16')]", "xpath:href"],
+        ["xpath=//article[3]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4adf406-51e8-4c56-9a25-4d36b157fad7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.media:nth-child(4) .article-content",
+      "targets": [
+        ["css=.media:nth-child(4) .article-content", "css:finder"],
+        ["xpath=(//a[contains(text(),'Unfriend')])[3]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/unfriend/kaylaawheelerr')]", "xpath:href"],
+        ["xpath=//article[3]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4cf71bfb-8968-4ee3-a747-cc46f4a80f68",
+      "comment": "",
+      "command": "click",
+      "target": "css=.media:nth-child(4) .article-content",
+      "targets": [
+        ["css=.media:nth-child(4) .article-content", "css:finder"],
+        ["xpath=(//a[contains(text(),'Unfriend')])[2]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/unfriend/Cmarquardt16')]", "xpath:href"],
+        ["xpath=//article[2]/div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "93b3bc1d-f4b8-4e44-bcde-73f312cead3b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Unfriend",
+      "targets": [
+        ["linkText=Unfriend", "linkText"],
+        ["css=.media:nth-child(3) .article-content", "css:finder"],
+        ["xpath=//a[contains(text(),'Unfriend')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/unfriend/DoctorDoe')]", "xpath:href"],
+        ["xpath=//article/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Unfriend')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5ceda5c6-fd83-4e0e-8a9c-af3e9134467c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.media:nth-child(8) .article-content",
+      "targets": [
+        ["css=.media:nth-child(8) .article-content", "css:finder"],
+        ["xpath=(//a[contains(text(),'Friend')])[4]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/friend/kaylaawheelerr')]", "xpath:href"],
+        ["xpath=//article[5]/div/a", "xpath:position"]
       ],
       "value": ""
     }]
