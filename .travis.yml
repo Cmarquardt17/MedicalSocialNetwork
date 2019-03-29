@@ -7,7 +7,7 @@ python:
   - "3.7"
 addons:
   sonarcloud: 
-  organization: cmarquardt17-github
+  organization: Cmarquardt17-github
   token:
     secure: d2a207f95b7f03e634cb8ca274e256c67ab4798b
 <<<<<<< HEAD
