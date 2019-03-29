@@ -14,7 +14,7 @@ This documentation is for developers who wish to contribute the the application.
 Our project is a medical social network that will allow a patient to connect or become “friends” with their clinicians to share their information with them. The information that would be shared with the clinician would be anything the patient deems as necessary, which could range from allergies to past/current medications. Having to fill out the same paperwork every time you visit the doctor, or a new doctor can be redundant, and you risk a chance of putting different information down than you have in the past. This social network can save you from accidentally putting down different information and save time. 
 
 <h2>How to Obtain and Install</h2>
-	We are using hosted software for our website.
+	We are using hosted software for our website. This is the URL to access our website: https://www.medspace.tk
 
 
 <h2>How to Run</h2>
