@@ -10,11 +10,8 @@ addons:
   organization: Cmarquardt17-github
   token:
     secure: d2a207f95b7f03e634cb8ca274e256c67ab4798b
-<<<<<<< HEAD
-
-=======
+    
 script:
->>>>>>> b1ef562ac9819d98d70e55a72fcd77bf8abcc667
   - sonar-scanner
 
 cache:
