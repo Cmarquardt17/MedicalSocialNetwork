@@ -11,16 +11,6 @@ addons:
   token:
     secure: d2a207f95b7f03e634cb8ca274e256c67ab4798b
 <<<<<<< HEAD
-notifications:
-  email:
-    recipients:
-    - kaylaawheelerr@gmail.com
-    - co.sluggett@gmail.com
-    - christianmarquardt16@gmail.com
-    - maxcarr12@gmail.com
-    on_success: always
-    on_failure: never
-    secure: d2a207f95b7f03e634cb8ca274e256c67ab4798b
 
 =======
 script:
