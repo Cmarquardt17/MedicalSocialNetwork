@@ -7,7 +7,7 @@ python:
   - "3.7"
 addons:
   sonarcloud: 
-  organization: Cmarquardt17-github
+  organization: cmarquardt17-github
   token:
     secure: d2a207f95b7f03e634cb8ca274e256c67ab4798b
 <<<<<<< HEAD
@@ -20,12 +20,13 @@ notifications:
     - maxcarr12@gmail.com
     on_success: always
     on_failure: never
-    secure: d2a207f95b7f03e634cb8ca274e256c67ab4798bscript:
+    secure: d2a207f95b7f03e634cb8ca274e256c67ab4798b
 
 =======
 script:
 >>>>>>> b1ef562ac9819d98d70e55a72fcd77bf8abcc667
   - sonar-scanner
+
 cache:
   directories: "$HOME/.m2/repository $HOME/.sonar/cache $HOME/.gradle .gradle"
 env:
