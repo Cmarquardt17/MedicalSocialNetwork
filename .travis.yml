@@ -1,25 +1,9 @@
-language: node_js
-node_js:
-  - "9"
-dist: trusty
-sudo: required
+language: python
 addons:
-  chrome: stable
-  hostname: localhost
-before_install:
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-before_script:
-  - npm run dev &
-cache:
-  yarn: true
-  directories:
-    - node_modules
-install:
-  - npm install
-script:
-  - cd client/ && npm install && npm run test
-
-
+  sonarcloud:
+  organization: Cmarquardt17-github
+  token:
+    secure: d2a207f95b7f03e634cb8ca274e256c67ab4798b
 
 notifications:
   email:
@@ -29,4 +13,10 @@ notifications:
       - christianmarquardt16@gmail.com
       - maxcarr12@gmail.com
     on_success: always 
-    on_failure: always 
+    on_failure: never 
+cache:
+  directories:
+    $HOME/.m2/repository
+    $HOME/.sonar/cache
+    $HOME/.gradle
+    .gradle
