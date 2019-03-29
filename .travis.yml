@@ -1,24 +1,4 @@
-language: node_js
-node_js:
-  - "9"
-dist: trusty
-sudo: required
-addons:
-  chrome: stable
-  hostname: localhost
-before_install:
-  - google-chrome-stable --headless --disable-gpu --remote-debugging-port=9222 http://localhost &
-before_script:
-  - npm run dev &
-cache:
-  yarn: true
-  directories:
-    - node_modules
-install:
-  - npm install
-script:
-  - cd client/ && npm install && npm run test
-
+language: python
 
 
 notifications:
@@ -29,4 +9,4 @@ notifications:
       - christianmarquardt16@gmail.com
       - maxcarr12@gmail.com
     on_success: always 
-    on_failure: always 
+    on_failure: never 
