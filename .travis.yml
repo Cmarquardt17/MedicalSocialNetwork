@@ -1,5 +1,9 @@
 language: python
-
+addons:
+  sonarcloud:
+  organization: Cmarquardt17-github
+  token:
+    secure: d2a207f95b7f03e634cb8ca274e256c67ab4798b
 
 notifications:
   email:
@@ -10,3 +14,9 @@ notifications:
       - maxcarr12@gmail.com
     on_success: always 
     on_failure: never 
+cache:
+  directories:
+    $HOME/.m2/repository
+    $HOME/.sonar/cache
+    $HOME/.gradle
+    .gradle
