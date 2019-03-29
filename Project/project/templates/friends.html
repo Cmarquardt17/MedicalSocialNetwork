@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+  {% if friends.doctor == "no" %}
+  <h2>Doctors you are friends with:</h2>
+  {% else %}
+  <h2>Patients you are friends with:</h2>
+  {% endif %}
+  {% for user in friends.friended %}
+    <article class="media content-section">
+      <div class="media-body">
+        <p>{{ user.username }}</p>
+        <a class="article-content" href="{{ url_for('users.unfriend', nickname=user.username) }}">Unfriend</a>
+      </div>
+    </article>
+
+  {% endfor %}
+  {% if friends.doctor == "no" %}
+    <h2>All Doctors:</h2>
+    {% for otheruser in users %}
+      {% if otheruser.doctor == "yes" %}
+
+        <article class="media content-section">
+          <div class="media-body">
+            <p>{{ otheruser.username }}</p>
+            <a class="article-content" href="{{ url_for('users.friend', nickname=otheruser.username) }}">Friend</a>
+          </div>
+        </article>
+
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+  {% if friends.doctor == "yes" %}
+  <h2>All Patients:</h2>
+    {% for otheruser in users %}
+      {% if otheruser.doctor == "no" %}
+
+      <article class="media content-section">
+        <div class="media-body">
+          <p>{{ otheruser.username }}</p>
+          <a class="article-content" href="{{ url_for('users.friend', nickname=otheruser.username) }}">Friend</a>
+        </div>
+      </article>
+
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endblock content %}
