@@ -9,14 +9,15 @@ python:
   - "3.6"
   - "3.6-dev"  # 3.6 development branch
   - "3.7"
-install: true
+install: pip install -r requirements.txt
 addons:
   sonarcloud:
   organization: Cmarquardt17-github
   token:
     secure: d2a207f95b7f03e634cb8ca274e256c67ab4798b
 script:
-  ./gradle clean check sonarqube build
+  - yarn build
+  - sonar-scanner
 cache:
   directories:
     $HOME/.m2/repository
