@@ -119,6 +119,22 @@
             {% endif %}
           </div>
           <div class="form-group">
+            {{ form.doctor.label(class="form-control-label") }}
+
+            {% if form.doctor.errors %}
+              {{ form.doctor(class="form-control form-control-lg is-invalid") }}
+              <p>If yes, answer "N/A" for rest of form.(Except Passwords)</p>
+              <div class="invalid-feedback">
+                {% for error in form.doctor.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.doctor(class="form-control form-control-lg") }}
+              <p>If yes, answer "N/A" for rest of form.(Except Passwords)</p>
+            {% endif %}
+          </div>
+          <div class="form-group">
             {{ form.dateOfBirth.label(class="form-control-label") }}
 
             {% if form.dateOfBirth.errors %}

@@ -21,6 +21,8 @@ class RegistrationForm(FlaskForm):
                             validators=[DataRequired(), Length(min=2, max=50)])
     phone = StringField('Phone',
                             validators=[DataRequired(), Length(min=2, max=10)])
+    doctor = StringField('Are You a Clinician?("yes"/"no")',
+                            validators=[DataRequired(), Length(min=2, max=10)])
     dateOfBirth = StringField('Date of Birth',
                             validators=[DataRequired(), Length(min=2, max=20)])
     gender = StringField('Gender',
@@ -35,7 +37,7 @@ class RegistrationForm(FlaskForm):
                             validators=[DataRequired(), Length(min=2, max=20)])
     smoking = StringField('Smoking (Yes/No)',
                             validators=[DataRequired(), Length(min=2, max=20)])
-    password = PasswordField('Password', validators=[DataRequired()])
+    password = PasswordField('Password (Must be more than 2 characters)', validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password',
                                     validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
@@ -72,6 +74,8 @@ class UpdateAccountForm(FlaskForm):
     address = StringField('Address',
                             validators=[DataRequired(), Length(min=2, max=50)])
     phone = StringField('Phone',
+                            validators=[DataRequired(), Length(min=2, max=10)])
+    doctor = StringField('Are You a Clinician?("yes"/"no")',
                             validators=[DataRequired(), Length(min=2, max=10)])
     dateOfBirth = StringField('Date of Birth',
                             validators=[DataRequired(), Length(min=2, max=20)])
