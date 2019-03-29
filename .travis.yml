@@ -1,22 +1,20 @@
 language: python
 addons:
-  sonarcloud:
+  sonarcloud: 
   organization: Cmarquardt17-github
   token:
     secure: d2a207f95b7f03e634cb8ca274e256c67ab4798b
-
 notifications:
   email:
     recipients:
-      - kaylaawheelerr@gmail.com
-      - co.sluggett@gmail.com
-      - christianmarquardt16@gmail.com
-      - maxcarr12@gmail.com
-    on_success: always 
-    on_failure: never 
+    - kaylaawheelerr@gmail.com
+    - co.sluggett@gmail.com
+    - christianmarquardt16@gmail.com
+    - maxcarr12@gmail.com
+    on_success: always
+    on_failure: never
 cache:
-  directories:
-    $HOME/.m2/repository
-    $HOME/.sonar/cache
-    $HOME/.gradle
-    .gradle
+  directories: "$HOME/.m2/repository $HOME/.sonar/cache $HOME/.gradle .gradle"
+env:
+  global:
+    secure: IFZti8ovhZg6J/h7YzT01jp/kzxScZ5WYH1WwvkRyer632BTW0pdkjlm1nbbkJ0ScwW890o6xfiViCiBdWAda49hno0AC2kcYm01HBQkZIecsvgiM8U3aHB2Ad6IqaUfLux0asLw0Ft+X4YxVM0vH1FSaQmr+p6RRvJzuEgZx8TJ5gMP3OzDeCM2eI2KKTOd2EwIz5xz98jXUco/3DCRq6N1TgXPxe65iB4BuIv+Kfu/vrm5R7qV5zOWlD9iCprOXmeqMkRN1ClgZzFJJRco2huEmKUhbOf61Yg2sKTpwYavSYNcb86v9QEJnD6pDg9hh5+ys9h3Jvo05pux/FBfhhipTzW+RFSou/yn2SCMo6K04XwmkHJND8xcC6N29UOmTLXIW6r4R+fNzmCueCHBII94Au1ldmE5t7QBEL6xI+KVTTIC3eM9i2szvLeXFL+rMbmT+1meGO2AfJamg7lyG80rCsKBmYabkiQphtz+RN+zS+wiV4kD40EQsg/06niji6VUFnbD32/7XmmkAl5oeQS8IeQh49m3bxAiB1CeSP3OkveqjcByRLEFUr4uKGfh47c+ZZsgTX1p5B28vTY2U9ivDbjJRR4g7GNk+y45nbmmVMGSY0/9QPO+00sJ+D8of+s33jKpd/m29s0hiSNSPuq/Z9WT68dMPgN5mDeR2GU=
