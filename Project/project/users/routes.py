@@ -18,7 +18,7 @@ def register():
         user = User(username=form.username.data, email=form.email.data, password=hashed_password,
                     firstName=form.firstName.data, middleName=form.middleName.data,
                     lastName=form.lastName.data, address=form.address.data,
-                    phone=form.phone.data, dateOfBirth=form.dateOfBirth.data,
+                    phone=form.phone.data, doctor=form.doctor.data, dateOfBirth=form.dateOfBirth.data,
                     gender=form.gender.data, ssn=form.ssn.data, race=form.race.data,
                     emergency=form.emergency.data, majorSurgery=form.majorSurgery.data,
                     smoking=form.emergency.data)
@@ -43,6 +43,33 @@ def login():
             flash('Login Unsuccessful. Please check email and password', 'danger')
     return render_template('login.html', title='Login', form=form)
 
+@users.route("/friends")
+@login_required
+def friends():
+    users = User.query.all()
+    friends = User.query.filter_by(username=current_user.username).first_or_404()
+    return render_template('friends.html', title='Friends', friends=friends, users=users)
+
+@users.route('/friend/<nickname>')
+@login_required
+def friend(nickname):
+    user = User.query.filter_by(username=nickname).first()
+    u = current_user.friend(user)
+    db.session.add(u)
+    db.session.commit()
+    flash('You are now friends with ' + nickname + '!', 'success')
+    return redirect(url_for('users.friends', title='Friends', users=users))
+
+@users.route('/unfriend/<nickname>')
+@login_required
+def unfriend(nickname):
+    user = User.query.filter_by(username=nickname).first()
+    u = current_user.unfriend(user)
+    db.session.add(u)
+    db.session.commit()
+    flash('You have are not friends with ' + nickname + '.','success')
+    return redirect(url_for('users.friends', title='Friends', users=users))
+
 @users.route("/logout")
 def logout():
     logout_user()
@@ -63,6 +90,7 @@ def account():
         current_user.lastName = form.lastName.data
         current_user.address = form.address.data
         current_user.phone = form.phone.data
+        current_user.doctor = form.doctor.data
         current_user.dateOfBirth = form.dateOfBirth.data
         current_user.gender = form.gender.data
         current_user.ssn = form.ssn.data
@@ -81,6 +109,7 @@ def account():
         form.lastName.data = current_user.lastName
         form.address.data = current_user.address
         form.phone.data = current_user.phone
+        form.doctor.data = current_user.doctor
         form.dateOfBirth.data = current_user.dateOfBirth
         form.gender.data = current_user.gender
         form.ssn.data = current_user.ssn
