@@ -5,6 +5,8 @@ addons:
   token:
     secure: d2a207f95b7f03e634cb8ca274e256c67ab4798b
 
+script:
+  ./gradlew clean check sonarqube build
 notifications:
   email:
     recipients:
