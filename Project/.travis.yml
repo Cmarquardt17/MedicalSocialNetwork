@@ -5,8 +5,10 @@ python:
 - '3.6'
 - '3.7'
 
+addons:
   sonarcloud:
     organization: "cmarquardt17-github"
+    token:
       secure: G1/ShZs3ISAc8RMwOftefuwnceb6mfggngN5s0C/PdfaOd+57wng8780o7c2obSnpNsaNBKVYkogHiDA0kAM60yQntlGu/nlqNtNGGLCDq8ajl+1gEynaVkfsv6wyvXGDfEDdESbe3ImHkjS2c1Zg6SJT5+4DsqZ2fjKnzxwjHS8AJLgs1nBS6rRlVtFj1orDFQYwFKp+NGjYDdtPqsDuWvIux/yshzPvSXNrzdSjJo0uzJFO0/EgQEx4yPMY5BrY0la+eJiMQ4UAXfdmBQIRG9cWbctklD+pntFBTVZfEGrEs3bzKfbzALlmeSaZl8BOZreP3oqw2XwzPdFWQZWCatYRPzCwdPxje0yzLqBfanQqpqp5fEsjLnJ85wdvEiXgmyPMoSeiuHnDSvN5yEhEPDLfF17iOIwHuaCPMyCjlDI7+lh4h7pOv1Kk3mGrCtPchK+bJAuzmzNtS8xPrL69IwCe7FQq2Ew/Tfmu46Ly+jO3ohaomHfVUAnZl5Jgyjqn7nLiTCje6Gi/dlxfzCwMuCh1WpULXSnlZt4xcOUtqyT+8iXvODVL3ttneRHXBJMsev/pN68gRzjdy3f0GmngLxXdgkZxsNKoI1ufEDWAp1JLCvyLLAL1kt0YPTvr6D/kLJxXTywHgtENzREd+fSQxhVR1ovZxoB3xBTO1QtomU=
 
 script:
