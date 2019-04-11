@@ -1,6 +1,7 @@
-projectKey=PythonProject
-serverUrl=http://localhost:9000
-serverVersion=7.7.0.23042
-dashboardUrl=http://localhost:9000/dashboard?id=PythonProject
-ceTaskId=AWoN7Z5qUmucugUFbJf2
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AWoN7Z5qUmucugUFbJf2
+organization=cmarquardt17-github
+projectKey=Cmarquardt17_MedicalSocialNetwork
+serverUrl=https://sonarcloud.io
+serverVersion=7.8.0.23279
+dashboardUrl=https://sonarcloud.io/dashboard?id=Cmarquardt17_MedicalSocialNetwork
+ceTaskId=AWoOFpHwbZ-4oYCt18a3
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWoOFpHwbZ-4oYCt18a3
