@@ -2,5 +2,5 @@ projectKey=PythonProject
 serverUrl=http://localhost:9000
 serverVersion=7.7.0.23042
 dashboardUrl=http://localhost:9000/dashboard?id=PythonProject
-ceTaskId=AWoKzCJw0MSuu_xfllg9
-ceTaskUrl=http://localhost:9000/api/ce/task?id=AWoKzCJw0MSuu_xfllg9
+ceTaskId=AWoN4HZqUmucugUFbJf0
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AWoN4HZqUmucugUFbJf0
