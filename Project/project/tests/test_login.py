@@ -41,17 +41,6 @@ class BasicTests(unittest.TestCase):
         )
         self.assertIn(b'Log In', response.data)
 
-    '''def test_correct_login(self):
-        with self.app:
-            response = self.app.post(
-                '/login',
-                data=dict(user='admin', password='admin'),
-                follow_redirects=True
-            )
-            #self.assertIn(b'You were logged in', response.data)
-            self.assertTrue(user == 'admin')
-            self.assertTrue(user.is_active())'''
-
 
 if __name__ == "__main__":
     unittest.main()
