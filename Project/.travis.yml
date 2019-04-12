@@ -1,0 +1,13 @@
+language: python
+python:
+- '3.3'
+- '3.5'
+- '3.6'
+- '3.7'
+addons:
+  sonarcloud: 
+  organization: "cmarquardt17-github"
+  token:
+    secure: AKZHuURCi/VwoY2/ffgrH7gYUEIN6ERSbxvy85I5z4Nmw/oygIPyUlqIlNrhgF0TycB4I1LVWlDtSXEYt0+j+9k3KjM3gVNeGwMGrd/cZ3nQFj2tIFkZUvrdtAgc9Ft0/2xDHb81uhX5A+7N4FtLYkOt6+/oHm3pijBsoiWAVaJ6rTT8TjanjX+vlYtwqpbrhYzB1cFuhFFd6V88+Y53ijFtdSrZ61XsCQi0lPO7jZ/pxM7gODVOYotBo1f1/hT4TCqpP1I/Dp0n6shW8/w+dMcKII5uGPntI7vwE5EtTS0HbNF3gRVvaGHhejE2TA5mV8xsHhzGf6JUu8lhBbCR8reNlC+Y6T9v4jKraHvvPU6ggf/Jvye8sOi6ZD2fqX144u6T991nfkWZlAlhNWu6XUGerkTXWeKwn2gZt6nYPLd8YXz3X+m2iYya5v+pIsvXtEstvGoRY+uZ0JlXsjOvUSvXYubWSdN9kDftriICkyAX+dV3We1Txy9W8YU7Vgn1bvNBpMCy/CPXhdvc5sVIDgzFVIJd8S0MsUkU99aWqj9GYv4TpQhgv+gKmmh3P0w1ZkuQxJpxBXPssH4nyHk+Jn6FrHMHJ71/MCmfCc7zcz0yAJm95iaTWtu6bD/yTjx0XCwJrBkJT1eEuLEk94gXd5gHRFXjjb15yWSTdiZT9s4=
+script:
+  - sonar-scanner

@@ -1,8 +1,7 @@
 # project/test.py
-
 import unittest
 import os,sys,inspect
-from project import run
+import run.py
 
 app = create_app()
 
