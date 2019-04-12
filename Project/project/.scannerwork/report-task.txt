@@ -3,5 +3,5 @@ projectKey=Cmarquardt17_MedicalSocialNetwork
 serverUrl=https://sonarcloud.io
 serverVersion=7.8.0.23279
 dashboardUrl=https://sonarcloud.io/dashboard?id=Cmarquardt17_MedicalSocialNetwork
-ceTaskId=AWoSWtcWcuf6R8N43e8B
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWoSWtcWcuf6R8N43e8B
+ceTaskId=AWoSXed5AeX8nbrg2_A5
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AWoSXed5AeX8nbrg2_A5
