@@ -2,11 +2,47 @@
 {% block content %}
 
     {% for post in posts %}
+      {% if friends.doctor == "no" %}
+        {% if post.patient == friends.username %}
+          <article class="media content-section">
+            <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+          <div class="media-body">
+          <div class="article-metadata">
+            <a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username) }}">Author: {{ post.author.username }}</a>
+            <a class="mr-2" href="{{ url_for('users.user_posts', username=post.patient) }}">Patient: {{ post.patient }}</a>
+            <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+          </div>
+          <h2><a class="article-title" href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.condition }}</a></h2>
+          <p class="article-content">Medication: {{ post.medication }}</p>
+          <p class="article-content">Description:<br>{{ post.description }}</p>
+          </div>
+          </article>
+        {% endif %}
+      {% endif %}
+      {% if friends.doctor == "yes" %}
+        <article class="media content-section">
+          <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
+        <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username) }}">Author: {{ post.author.username }}</a>
+          <a class="mr-2" href="{{ url_for('users.user_posts', username=post.patient) }}">Patient: {{ post.patient }}</a>
+          <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
+        </div>
+        <h2><a class="article-title" href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.condition }}</a></h2>
+        <p class="article-content">Medication: {{ post.medication }}</p>
+        <p class="article-content">Description:<br>{{ post.description }}</p>
+        </div>
+        </article>
+      {% endif %}
+    {% endfor %}
+
+    {% for post in myPosts %}
     <article class="media content-section">
       <img class="rounded-circle article-img" src="{{ url_for('static', filename='profile_pics/' + post.author.image_file) }}">
     <div class="media-body">
     <div class="article-metadata">
-      <a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username) }}">User: {{ post.author.username }}</a>
+      <a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username) }}">Author: {{ post.author.username }}</a>
+      <a class="mr-2" href="{{ url_for('users.user_posts', username=post.patient) }}">Patient: {{ post.patient }}</a>
       <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
     </div>
     <h2><a class="article-title" href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.condition }}</a></h2>

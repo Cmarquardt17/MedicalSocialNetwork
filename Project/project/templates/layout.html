@@ -26,8 +26,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarToggle">
               <div class="navbar-nav mr-auto">
+                {% if title == 'Home' %}
+                <a class="nav-item nav-link" href="{{ url_for('main.home')}}"><u>Home</u></a>
+                <a class="nav-item nav-link" href="{{ url_for('users.friends')}}">Friends</a>
+                {% elif title == 'Friends' %}
+                <a class="nav-item nav-link" href="{{ url_for('main.home')}}">Home</a>
+                <a class="nav-item nav-link" href="{{ url_for('users.friends')}}"><u>Friends</u></a>
+                {% else %}
                 <a class="nav-item nav-link" href="{{ url_for('main.home')}}">Home</a>
                 <a class="nav-item nav-link" href="{{ url_for('users.friends')}}">Friends</a>
+                {% endif %}
               </div>
               <!-- Navbar Right Side -->
               <div class="navbar-nav">

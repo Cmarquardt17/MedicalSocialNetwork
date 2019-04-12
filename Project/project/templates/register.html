@@ -175,17 +175,59 @@
             {% endif %}
           </div>
           <div class="form-group">
-            {{ form.emergency.label(class="form-control-label") }}
+            {{ form.emergencyName.label(class="form-control-label") }}
 
-            {% if form.emergency.errors %}
-              {{ form.emergency(class="form-control form-control-lg is-invalid") }}
+            {% if form.emergencyName.errors %}
+              {{ form.emergencyName(class="form-control form-control-lg is-invalid") }}
               <div class="invalid-feedback">
-                {% for error in form.emergency.errors %}
+                {% for error in form.emergencyName.errors %}
                   <span>{{ error }}</span>
                 {% endfor %}
               </div>
             {% else %}
-              {{ form.emergency(class="form-control form-control-lg") }}
+              {{ form.emergencyName(class="form-control form-control-lg") }}
+            {% endif %}
+          </div>
+          <div class="form-group">
+            {{ form.emergencyRelation.label(class="form-control-label") }}
+
+            {% if form.emergencyRelation.errors %}
+              {{ form.emergencyRelation(class="form-control form-control-lg is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.emergencyRelation.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.emergencyRelation(class="form-control form-control-lg") }}
+            {% endif %}
+          </div>
+          <div class="form-group">
+            {{ form.emergencyAddress.label(class="form-control-label") }}
+
+            {% if form.emergencyAddress.errors %}
+              {{ form.emergencyAddress(class="form-control form-control-lg is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.emergencyAddress.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.emergencyAddress(class="form-control form-control-lg") }}
+            {% endif %}
+          </div>
+          <div class="form-group">
+            {{ form.emergencyPhone.label(class="form-control-label") }}
+
+            {% if form.emergencyPhone.errors %}
+              {{ form.emergencyPhone(class="form-control form-control-lg is-invalid") }}
+              <div class="invalid-feedback">
+                {% for error in form.emergencyPhone.errors %}
+                  <span>{{ error }}</span>
+                {% endfor %}
+              </div>
+            {% else %}
+              {{ form.emergencyPhone(class="form-control form-control-lg") }}
             {% endif %}
           </div>
           <div class="form-group">

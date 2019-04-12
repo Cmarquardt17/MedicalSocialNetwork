@@ -12,7 +12,7 @@ posts = Blueprint('posts', __name__)
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(condition=form.condition.data, medication=form.medication.data,
+        post = Post(patient=form.patient.data, condition=form.condition.data, medication=form.medication.data,
                     description=form.description.data, author=current_user)
         db.session.add(post)
         db.session.commit()
@@ -34,6 +34,7 @@ def update_post(post_id):
         abort(403)
     form = PostForm()
     if form.validate_on_submit():
+        post.patient = form.patient.data
         post.condition = form.condition.data
         post.medication = form.medication.data
         post.description = form.description.data
@@ -41,6 +42,7 @@ def update_post(post_id):
         flash('Your post has been updated!', 'success')
         return redirect(url_for('posts.post', post_id=post.id))
     elif request.method == 'GET':
+        form.patient.data = post.patient
         form.condition.data = post.condition
         form.medication.data = post.medication
         form.description.data = post.description

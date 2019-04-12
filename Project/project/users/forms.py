@@ -31,9 +31,15 @@ class RegistrationForm(FlaskForm):
                             validators=[DataRequired(), Length(min=9, max=9)])
     race = StringField('Race',
                             validators=[DataRequired(), Length(min=2, max=20)])
-    emergency = StringField('Emergency Contact Info(Name, Relation, Phone, Address)',
+    emergencyName = StringField('Emergency Contact Name',
                             validators=[DataRequired(), Length(min=2, max=120)])
-    majorSurgery = StringField('Major Surgeries(Seperate with commans)',
+    emergencyRelation = StringField('Emergency Contact Relation',
+                            validators=[DataRequired(), Length(min=2, max=120)])
+    emergencyAddress = StringField('Emergency Contact Address',
+                            validators=[DataRequired(), Length(min=2, max=120)])
+    emergencyPhone = StringField('Emergency Contact Phone',
+                            validators=[DataRequired(), Length(min=2, max=120)])
+    majorSurgery = StringField('Major Surgeries(Seperate with commas)',
                             validators=[DataRequired(), Length(min=2, max=20)])
     smoking = StringField('Smoking (Yes/No)',
                             validators=[DataRequired(), Length(min=2, max=20)])
@@ -85,7 +91,13 @@ class UpdateAccountForm(FlaskForm):
                             validators=[DataRequired(), Length(min=9, max=9)])
     race = StringField('Race',
                             validators=[DataRequired(), Length(min=2, max=20)])
-    emergency = StringField('Emergency Contact Info(Name, Relation, Phone, Address)',
+    emergencyName = StringField('Emergency Contact Name)',
+                            validators=[DataRequired(), Length(min=2, max=120)])
+    emergencyRelation = StringField('Emergency Contact Relation)',
+                            validators=[DataRequired(), Length(min=2, max=120)])
+    emergencyAddress = StringField('Emergency Contact Address)',
+                            validators=[DataRequired(), Length(min=2, max=120)])
+    emergencyPhone = StringField('Emergency Contact Phone)',
                             validators=[DataRequired(), Length(min=2, max=120)])
     majorSurgery = StringField('Major Surgeries(Seperate with commans)',
                             validators=[DataRequired(), Length(min=2, max=20)])

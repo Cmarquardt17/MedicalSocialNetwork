@@ -28,7 +28,10 @@ class User(db.Model, UserMixin):
     gender = db.Column(db.String(20), nullable=False)
     ssn = db.Column(db.String(9), nullable=False)
     race = db.Column(db.String(20), nullable=False)
-    emergency = db.Column(db.String(120), nullable=False)
+    emergencyName = db.Column(db.String(120), nullable=False)
+    emergencyRelation = db.Column(db.String(120), nullable=False)
+    emergencyAddress = db.Column(db.String(120), nullable=False)
+    emergencyPhone = db.Column(db.String(120), nullable=False)
     majorSurgery = db.Column(db.String(20), nullable=False)
     smoking = db.Column(db.String(20), nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
@@ -75,10 +78,12 @@ class User(db.Model, UserMixin):
                     '{self.firstName}', '{self.middleName}', '{self.lastName}',\
                     '{self.address}', '{self.phone}', '{self.doctor}', '{self.dateOfBirth}',\
                     '{self.gender}', '{self.ssn}', '{self.race}',\
-                    '{self.emergency}', '{self.majorSurgery}', '{self.smoking}')"
+                    '{self.emergencyName}', '{self.emergencyRelation}', '{self.emergencyAddress}',\
+                    '{self.emergencyPhone}', '{self.majorSurgery}', '{self.smoking}')"
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    patient = db.Column(db.String(100), nullable=True)
     condition = db.Column(db.String(100), nullable=False)
     medication = db.Column(db.String(200), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
@@ -86,4 +91,4 @@ class Post(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):
-        return f"Post('{self.condition}', '{self.medication}', '{self.date_posted}')"
+        return f"Post('{self.patient}', '{self.condition}', '{self.medication}', '{self.date_posted}')"

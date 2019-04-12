@@ -12,4 +12,6 @@ def home():
     friends = User.query.filter_by(username=current_user.username).first_or_404()
     #posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
     posts = friends.followed_posts()
-    return render_template('home.html', posts=posts, friends=friends)
+    myPosts = Post.query.filter_by(author=current_user)\
+        .order_by(Post.date_posted.desc())
+    return render_template('home.html', title='Home', posts=posts, myPosts=myPosts, friends=friends)

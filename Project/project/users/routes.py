@@ -20,8 +20,9 @@ def register():
                     lastName=form.lastName.data, address=form.address.data,
                     phone=form.phone.data, doctor=form.doctor.data, dateOfBirth=form.dateOfBirth.data,
                     gender=form.gender.data, ssn=form.ssn.data, race=form.race.data,
-                    emergency=form.emergency.data, majorSurgery=form.majorSurgery.data,
-                    smoking=form.emergency.data)
+                    emergencyName=form.emergencyName.data, emergencyRelation=form.emergencyRelation.data,
+                    emergencyAddress=form.emergencyAddress.data, emergencyPhone=form.emergencyPhone.data,
+                    majorSurgery=form.majorSurgery.data, smoking=form.smoking.data)
         db.session.add(user)
         db.session.commit()
         flash('Your account has been created! You are now able to log in.', 'success')
@@ -47,8 +48,9 @@ def login():
 @login_required
 def friends():
     users = User.query.all()
-    friends = User.query.filter_by(username=current_user.username).first_or_404()
-    return render_template('friends.html', title='Friends', friends=friends, users=users)
+    user = User.query.filter_by(username=current_user.username).first_or_404()
+    friends = user.friended.all()
+    return render_template('friends.html', title='Friends', friends=friends, user=user, users=users)
 
 @users.route('/friend/<nickname>')
 @login_required
@@ -95,7 +97,10 @@ def account():
         current_user.gender = form.gender.data
         current_user.ssn = form.ssn.data
         current_user.race = form.race.data
-        current_user.emergency = form.emergency.data
+        current_user.emergencyName = form.emergencyName.data
+        current_user.emergencyRelation = form.emergencyRelation.data
+        current_user.emergencyAddress = form.emergencyAddress.data
+        current_user.emergencyPhone = form.emergencyPhone.data
         current_user.majorSurgery = form.majorSurgery.data
         current_user.smoking = form.smoking.data
         db.session.commit()
@@ -114,7 +119,10 @@ def account():
         form.gender.data = current_user.gender
         form.ssn.data = current_user.ssn
         form.race.data = current_user.race
-        form.emergency.data = current_user.emergency
+        form.emergencyName.data = current_user.emergencyName
+        form.emergencyRelation.data = current_user.emergencyRelation
+        form.emergencyAddress.data = current_user.emergencyAddress
+        form.emergencyPhone.data = current_user.emergencyPhone
         form.majorSurgery.data = current_user.majorSurgery
         form.smoking.data = current_user.smoking
 

@@ -1,22 +1,23 @@
 {% extends "layout.html" %}
 {% block content %}
-  {% if friends.doctor == "no" %}
-  <h2>Doctors you are friends with:</h2>
+  {% if user.doctor == "no" %}
+  <h2>Your Doctors:</h2>
   {% else %}
-  <h2>Patients you are friends with:</h2>
+  <h2>Your Patients:</h2>
   {% endif %}
-  {% for user in friends.friended %}
+  {% for current in user.friended %}
     <article class="media content-section">
       <div class="media-body">
-        <p>{{ user.username }}</p>
-        <a class="article-content" href="{{ url_for('users.unfriend', nickname=user.username) }}">Unfriend</a>
+        <p>{{ current.username }}</p>
+        <a class="article-content" href="{{ url_for('users.unfriend', nickname=current.username) }}">Unfriend</a>
       </div>
     </article>
 
   {% endfor %}
-  {% if friends.doctor == "no" %}
-    <h2>All Doctors:</h2>
+  {% if user.doctor == "no" %}
+    <h2>Friend Doctors:</h2>
     {% for otheruser in users %}
+      {% if otheruser not in user.friended %}
       {% if otheruser.doctor == "yes" %}
 
         <article class="media content-section">
@@ -27,11 +28,13 @@
         </article>
 
       {% endif %}
+      {% endif %}
     {% endfor %}
   {% endif %}
-  {% if friends.doctor == "yes" %}
-  <h2>All Patients:</h2>
+  {% if user.doctor == "yes" %}
+  <h2>Friend Patients:</h2>
     {% for otheruser in users %}
+      {% if otheruser not in user.friended %}
       {% if otheruser.doctor == "no" %}
 
       <article class="media content-section">
@@ -41,6 +44,7 @@
         </div>
       </article>
 
+      {% endif %}
       {% endif %}
     {% endfor %}
   {% endif %}
