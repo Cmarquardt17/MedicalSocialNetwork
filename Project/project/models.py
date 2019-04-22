@@ -24,6 +24,7 @@ class User(db.Model, UserMixin):
     address = db.Column(db.String(50), nullable=False)
     phone = db.Column(db.String(10), nullable=False)
     doctor = db.Column(db.String(10), nullable=False)
+    drLicenseNum = db.Column(db.String(7), nullable=False)
     dateOfBirth = db.Column(db.String(20), nullable=False)
     gender = db.Column(db.String(20), nullable=False)
     ssn = db.Column(db.String(9), nullable=False)
@@ -35,6 +36,7 @@ class User(db.Model, UserMixin):
     majorSurgery = db.Column(db.String(20), nullable=False)
     smoking = db.Column(db.String(20), nullable=False)
     image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
+    confirmed = db.Column(db.Boolean, nullable=False, default=False)
     password = db.Column(db.String(60), nullable=False)
     posts = db.relationship('Post', backref='author', lazy=True)
     friended = db.relationship('User',
@@ -76,10 +78,10 @@ class User(db.Model, UserMixin):
     def __repr__(self):
         return f"User('{self.username}', '{self.email}', '{self.image_file}',\
                     '{self.firstName}', '{self.middleName}', '{self.lastName}',\
-                    '{self.address}', '{self.phone}', '{self.doctor}', '{self.dateOfBirth}',\
-                    '{self.gender}', '{self.ssn}', '{self.race}',\
+                    '{self.address}', '{self.phone}', '{self.doctor}', '{self.drLicenseNum}'\
+                    '{self.dateOfBirth}', '{self.gender}', '{self.ssn}', '{self.race}',\
                     '{self.emergencyName}', '{self.emergencyRelation}', '{self.emergencyAddress}',\
-                    '{self.emergencyPhone}', '{self.majorSurgery}', '{self.smoking}')"
+                    '{self.emergencyPhone}', '{self.majorSurgery}', '{self.smoking}','{self.confirmed}')"
 
 class Post(db.Model):
     id = db.Column(db.Integer, primary_key=True)

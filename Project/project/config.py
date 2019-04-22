@@ -8,3 +8,4 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = 'noreply.mednet@gmail.com'
     MAIL_PASSWORD = 'Password1@'
+    SECURITY_PASSWORD_SALT = 'my_precious_two'
