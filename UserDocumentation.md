@@ -18,7 +18,7 @@ Our project is a medical social network that will allow a patient to connect or 
 
 
 <h2>How to Run</h2>
-	To run the software/website, a patient or a clinician will need to either log in or sign up. When signing up, the clinician or patient will be added into the database with their information. For clinicians, they will need to verify their credentials, and patients will have to add in their medical history, but they will both have to put in their name, email address, phone number, username, password and other basic contact information, which will be stored in the database. When logging in, the patient or clinician will input their username and password which will then pull their information out of the database. Clinicians will be able to see and share information with their patients, while the patients will be able to friend their clinicians and share information they think is necessary to their clinician. 
+	To run the software/website, a patient or a clinician will need to either log in or sign up. When signing up, the clinician or patient will be added into the database with their information. For clinicians, they will need to verify their credentials by putting in their license number and waiting for approval from a back end member of the website to prove that they are a doctor. Patients will have to add in their medical history, but they will both have to put in their name, email address, phone number, username, password and other basic contact information, which will be stored in the database. When logging in, the patient or clinician will input their username and password which will then pull their information out of the database. Clinicians will be able to see and share information with their patients, while the patients will be able to friend their clinicians and share information they think is necessary to their clinician. 
 	
 
 <h2>How to Use</h2>
@@ -29,10 +29,6 @@ Our project is a medical social network that will allow a patient to connect or 
 	To report a bug, there will be a contact us button on the bottom of each webpage of the social network. When clicked on, the contact us page will bring the user to a page that asks for their name, email and the issue. A resource for how to write a good bug report is listed below:  https://bugs.java.com/bugdatabase/. 
 
 <h2>Currently Working</h2>
-    For our Complete Feature Release, the functionality of our webApp is listed below:
-    * Sign Up
-    * Login
-    * Contact Us
-    * Add Friend and UnFriend on both Clinican and Patient side
-    * Sharing Information
+    For our Final Release, our webApp is fully functional. 
+    
 
