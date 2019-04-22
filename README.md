@@ -18,10 +18,14 @@ The goal of this project is to create a social networkwhere you can choose to co
 
 7.Use a secured data host and a 3rd party electronic health care integrator(Google Cloud platform healthcare API may be able to theoretically solve both problems)
 
-<h2>User Documentation:</h2> click [here](https://github.com/Cmarquardt17/MedicalSocialNetwork/blob/master/UserDocumentation.md)
+<h2>Website Link</h2>
+The link for our website can be found here: https://www.medspace.tk
 
 
-<h2>Developer Documentation:</h2> click [here](https://github.com/Cmarquardt17/MedicalSocialNetwork/blob/master/DeveloperDocumentation.md)
+<h2>User Documentation:</h2>  https://github.com/Cmarquardt17/MedicalSocialNetwork/blob/master/UserDocumentation.md
+
+
+<h2>Developer Documentation:</h2> click https://github.com/Cmarquardt17/MedicalSocialNetwork/blob/master/DeveloperDocumentation.md
 
 
 
