@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+{% block content %}
+
+  <h2>Contact Us</h2>
+
+  <p>If you have any questions or concerns please contact us with the form below.</p>
+
+  <form method="POST" action="https://formspree.io/noreply.mednet@gmail.com">
+    <input type="email" name="email" placeholder="Your email" class="form-control"><br>
+    <textarea name="message" placeholder="Message" class="form-control md-textarea"></textarea><br>
+    <button type="submit" class="btn btn-primary">Send</button>
+
+  </form>
+
+
+
+{% endblock content %}

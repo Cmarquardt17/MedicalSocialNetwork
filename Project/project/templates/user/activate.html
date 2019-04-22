@@ -1,0 +1,10 @@
+
+<p>A new user would like to sign up.</p><br>
+<p>Name: {{ user.firstName }} {{ user.lastName }}</p>
+<p>Email: {{ user.email }}</p>
+<p>Phone: {{ user.phone }}</p>
+<p>Doctor License Number: {{ user.drLicenseNum }}</p>
+<p>Social Security Number: {{ user.ssn }}</p>
+
+<p>To verify this person is real click the link: </p>
+<p><a href="{{ confirm_url }}">{{ confirm_url }}</a></p>

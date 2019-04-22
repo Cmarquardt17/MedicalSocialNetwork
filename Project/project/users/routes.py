@@ -4,7 +4,9 @@ from project import db, bcrypt
 from project.models import User, Post
 from project.users.forms import (RegistrationForm, LoginForm, UpdateAccountForm,
                                    RequestResetForm, ResetPasswordForm)
-from project.users.utils import save_picture, send_reset_email
+from project.users.utils import (save_picture, send_reset_email,
+                                generate_confirmation_token, confirm_token,
+                                send_email, check_confirmed)
 
 users = Blueprint('users', __name__)
 
@@ -15,19 +17,44 @@ def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        user = User(username=form.username.data, email=form.email.data, password=hashed_password,
-                    firstName=form.firstName.data, middleName=form.middleName.data,
-                    lastName=form.lastName.data, address=form.address.data,
-                    phone=form.phone.data, doctor=form.doctor.data, dateOfBirth=form.dateOfBirth.data,
-                    gender=form.gender.data, ssn=form.ssn.data, race=form.race.data,
-                    emergencyName=form.emergencyName.data, emergencyRelation=form.emergencyRelation.data,
-                    emergencyAddress=form.emergencyAddress.data, emergencyPhone=form.emergencyPhone.data,
-                    majorSurgery=form.majorSurgery.data, smoking=form.smoking.data)
+        user = User(username=form.username.data,
+                    email=form.email.data,
+                    password=hashed_password,
+                    firstName=form.firstName.data,
+                    middleName=form.middleName.data,
+                    lastName=form.lastName.data,
+                    address=form.address.data,
+                    phone=form.phone.data,
+                    doctor=form.doctor.data,
+                    drLicenseNum=form.drLicenseNum.data,
+                    dateOfBirth=form.dateOfBirth.data,
+                    gender=form.gender.data,
+                    ssn=form.ssn.data,
+                    race=form.race.data,
+                    emergencyName=form.emergencyName.data,
+                    emergencyRelation=form.emergencyRelation.data,
+                    emergencyAddress=form.emergencyAddress.data,
+                    emergencyPhone=form.emergencyPhone.data,
+                    majorSurgery=form.majorSurgery.data,
+                    smoking=form.smoking.data,
+                    confirmed=False)
         db.session.add(user)
         db.session.commit()
-        flash('Your account has been created! You are now able to log in.', 'success')
-        return redirect(url_for('users.login'))
+        token = generate_confirmation_token(user.email)
+        confirm_url = url_for('users.confirm_email', token=token, _external=True)
+        html = render_template('user/activate.html', confirm_url=confirm_url, user=user)
+        subject = "Confirm Email"
+        send_email('noreply.mednet@gmail.com', subject, html)
+        flash('Your account has been created! Please wait till we verify your account', 'success')
+        return redirect(url_for('users.unconfirmed'))
     return render_template('register.html', title='Register', form=form)
+
+@users.route('/unconfirmed')
+@login_required
+def unconfirmed():
+    if current_user.confirmed:
+        return redirect('main.home')
+    return render_template('unconfirmed.html')
 
 @users.route("/login", methods=['GET','POST'])
 def login():
@@ -43,6 +70,23 @@ def login():
         else:
             flash('Login Unsuccessful. Please check email and password', 'danger')
     return render_template('login.html', title='Login', form=form)
+
+@users.route('/confirm/<token>')
+@login_required
+def confirm_email(token):
+    try:
+        email = confirm_token(token)
+    except:
+        flash('The confirmation link is invalid or has expired.', 'danger')
+    user = User.query.filter_by(email=email).first_or_404()
+    if user.confirmed:
+        flash('Account already confirmed. Please login.', 'success')
+    else:
+        user.confirmed = True
+        db.session.add(user)
+        db.session.commit()
+        flash('You have confirmed your account. Thanks!', 'success')
+    return redirect(url_for('users.login'))
 
 @users.route("/friends")
 @login_required
@@ -69,7 +113,7 @@ def unfriend(nickname):
     u = current_user.unfriend(user)
     db.session.add(u)
     db.session.commit()
-    flash('You have are not friends with ' + nickname + '.','success')
+    flash('You have unfriended ' + nickname + '!','success')
     return redirect(url_for('users.friends', title='Friends', users=users))
 
 @users.route("/logout")
@@ -79,6 +123,7 @@ def logout():
 
 @users.route("/account", methods=['GET','POST'])
 @login_required
+@check_confirmed
 def account():
     form = UpdateAccountForm()
     if form.validate_on_submit():
@@ -93,6 +138,7 @@ def account():
         current_user.address = form.address.data
         current_user.phone = form.phone.data
         current_user.doctor = form.doctor.data
+        current_user.drLicenseNum = form.drLicenseNum.data
         current_user.dateOfBirth = form.dateOfBirth.data
         current_user.gender = form.gender.data
         current_user.ssn = form.ssn.data
@@ -115,6 +161,7 @@ def account():
         form.address.data = current_user.address
         form.phone.data = current_user.phone
         form.doctor.data = current_user.doctor
+        form.drLicenseNum.data = current_user.drLicenseNum
         form.dateOfBirth.data = current_user.dateOfBirth
         form.gender.data = current_user.gender
         form.ssn.data = current_user.ssn

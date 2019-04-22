@@ -21,7 +21,9 @@ class RegistrationForm(FlaskForm):
                             validators=[DataRequired(), Length(min=2, max=50)])
     phone = StringField('Phone',
                             validators=[DataRequired(), Length(min=2, max=10)])
-    doctor = StringField('Are You a Clinician?("yes"/"no")',
+    doctor = StringField('Are You a Clinician? ("yes"/"no")',
+                            validators=[DataRequired(), Length(min=2, max=10)])
+    drLicenseNum = StringField('Doctor License Number ("N/A" if you are not a Doctor")',
                             validators=[DataRequired(), Length(min=2, max=10)])
     dateOfBirth = StringField('Date of Birth',
                             validators=[DataRequired(), Length(min=2, max=20)])
@@ -82,6 +84,8 @@ class UpdateAccountForm(FlaskForm):
     phone = StringField('Phone',
                             validators=[DataRequired(), Length(min=2, max=10)])
     doctor = StringField('Are You a Clinician?("yes"/"no")',
+                            validators=[DataRequired(), Length(min=2, max=10)])
+    drLicenseNum = StringField('Doctor License Number ("N/A" if you are not a Doctor")',
                             validators=[DataRequired(), Length(min=2, max=10)])
     dateOfBirth = StringField('Date of Birth',
                             validators=[DataRequired(), Length(min=2, max=20)])
