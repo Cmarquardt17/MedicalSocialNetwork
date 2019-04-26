@@ -4,6 +4,7 @@ This documentation is for developers who wish to contribute the the application.
 
 * Description
 * How to Obtain and Install
+* How to Register
 * How to Run
 * How to Use
 * How to Report a Bug
@@ -16,6 +17,21 @@ Our project is a medical social network that will allow a patient to connect or 
 <h2>How to Obtain and Install</h2>
 	We are using hosted software for our website. This is the URL to access our website: https://www.medspace.tk
 
+<h2>How to Register</h2>
+For Patients:
+
+* Fill out form completely
+* For the "Are you a Clinician?" box, put "no" as the answer.
+* For the "Doctor's License Number" put "N/A" as the answer.
+* Not correctly filling out those two boxes would delay registration for that user.
+
+For Clinicians:
+
+* Fill out the form completely.
+* For the "Are you a Clinician?" box, put "yes" as the answer.
+* For the "Doctor's License Number" put in your license number as the answer.
+* Put in N/A on every other box on the form except for the Social Security Number.
+* Not correctly filling out the form would delay registration for that user.
 
 <h2>How to Run</h2>
 	To run the software/website, a patient or a clinician will need to either log in or sign up. When signing up, the clinician or patient will be added into the database with their information. For clinicians, they will need to verify their credentials by putting in their license number and waiting for approval from a back end member of the website to prove that they are a doctor. Patients will have to add in their medical history, but they will both have to put in their name, email address, phone number, username, password and other basic contact information, which will be stored in the database. When logging in, the patient or clinician will input their username and password which will then pull their information out of the database. Clinicians will be able to see and share information with their patients, while the patients will be able to friend their clinicians and share information they think is necessary to their clinician. 
