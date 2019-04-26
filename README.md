@@ -25,7 +25,8 @@ The link for our website can be found here: https://www.medspace.tk
 <h2>User Documentation:</h2>  https://github.com/Cmarquardt17/MedicalSocialNetwork/blob/master/UserDocumentation.md
 
 
-<h2>Developer Documentation:</h2> click https://github.com/Cmarquardt17/MedicalSocialNetwork/blob/master/DeveloperDocumentation.md
+<h2>Developer Documentation:</h2> https://github.com/Cmarquardt17/MedicalSocialNetwork/blob/master/DeveloperDocumentation.md
+
 
 
 
