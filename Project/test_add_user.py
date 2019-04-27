@@ -34,6 +34,7 @@ class BasicTests(unittest.TestCase):
     def tearDown(self):
         pass
 
+    #A test to see if we can safely register a user correctly
     def test_register_user(self):
         db.drop_all()
         db.create_all()

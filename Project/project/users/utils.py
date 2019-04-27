@@ -8,6 +8,7 @@ from project import mail
 from functools import wraps
 from itsdangerous import URLSafeTimedSerializer
 
+#This function is for the user to update their current profile picture which can be updated later
 def save_picture(form_picture):
     random_hex = secrets.token_hex(8)
     _, f_ext = os.path.splitext(form_picture.filename)
@@ -21,6 +22,7 @@ def save_picture(form_picture):
     i.save(picture_path)
     return picture_fn
 
+#If a user wants to use a new email or for security reasons this method will do just that
 def send_reset_email(user):
     token = user.get_reset_token()
     #change email
@@ -34,10 +36,12 @@ If you did not make this request then ignore this email.
 '''
     mail.send(msg)
 
+#Security confirmation that they did infact want to change their email
 def generate_confirmation_token(email):
     serializer = URLSafeTimedSerializer(current_app.config['SECRET_KEY'])
     return serializer.dumps(email, salt=current_app.config['SECURITY_PASSWORD_SALT'])
 
+#Send email to a gmail to await confirmation
 def send_email(to, subject, template):
     msg = Message(
         subject,
@@ -47,6 +51,7 @@ def send_email(to, subject, template):
     )
     mail.send(msg)
 
+#This will send an email to a designated gmail account to be verified
 def check_confirmed(func):
     @wraps(func)
     def decorated_function(*args, **kwargs):
@@ -57,6 +62,7 @@ def check_confirmed(func):
 
     return decorated_function
 
+#The token that was given will be confirmed for the user
 def confirm_token(token, expiration=10000):
     serializer = URLSafeTimedSerializer(current_app.config['SECRET_KEY'])
     try:

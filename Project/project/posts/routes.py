@@ -5,8 +5,11 @@ from project import db
 from project.models import Post
 from project.posts.forms import PostForm
 
+#Blueprint/layout for the post layout
 posts = Blueprint('posts', __name__)
 
+
+#This method requires a login and you can create a post and it will redirect the user to their home page
 @posts.route("/post/new", methods=['GET','POST'])
 @login_required
 def new_post():
@@ -20,12 +23,14 @@ def new_post():
         return redirect(url_for('main.home'))
     return render_template('create_post.html', title='New Post', form=form)
 
-
+#This is the template for the posts and they are in order based on id and post date
 @posts.route("/post/<int:post_id>")
 def post(post_id):
     post = Post.query.get_or_404(post_id)
     return render_template('post.html', condition=post.condition, post=post)
 
+
+#Must be logged in, this method can update and replace a current condition
 @posts.route("/post/<int:post_id>/update", methods=['GET', 'POST'])
 @login_required
 def update_post(post_id):
@@ -49,7 +54,7 @@ def update_post(post_id):
     return render_template('create_post.html', title='Update Post', form=form,
                            legend='Update Post')
 
-
+#If a user no longer has that condition or it is faulty they can delete the post if they choose
 @posts.route("/post/<int:post_id>/delete", methods=['POST'])
 @login_required
 def delete_post(post_id):

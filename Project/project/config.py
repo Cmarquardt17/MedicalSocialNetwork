@@ -1,5 +1,6 @@
 import os
 
+#Config file for our database and the website itself
 class Config:
     SECRET_KEY = '1234'
     SQLALCHEMY_DATABASE_URI = 'sqlite:///site.db'

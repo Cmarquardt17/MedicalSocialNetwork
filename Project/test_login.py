@@ -26,20 +26,24 @@ class BasicTests(unittest.TestCase):
     def tearDown(self):
         pass
 
+    #Testing the main page to see if it loads correctly
     def test_main_page(self):
         response = self.app.get('/', follow_redirects=True)
         self.assertEqual(response.status_code, 200)
 
+    #Testing certain handlers to see if they load correctly
     def test_Handler(self):
         response = self.app.get('/something')
         response2 = self.app.get('/post/1/update')
         self.assertEqual(response.status_code, 404)
         self.assertEqual(response2.status_code, 302)
 
+    #When clicking on the login in page we want to check if it loads properly
     def test_login_page_loads(self):
         response = self.app.get('/login')
         self.assertIn(b'Log In', response.data)
 
+    #We are checking if a user enters in a login incorrectly
     def test_incorrect_login(self):
         response = self.app.post(
             '/login',
@@ -48,6 +52,7 @@ class BasicTests(unittest.TestCase):
         )
         self.assertIn(b'Log In', response.data)
 
+    #A test to successfully create a user
     def test_create_user(self):
 
         u = User(nickname = 'john', email = 'john@example.com', account_type = "tester")

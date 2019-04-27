@@ -5,7 +5,7 @@ from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationE
 from flask_login import current_user
 from project.models import User
 
-
+#This method is the layout for the registration page that the potential new user will have to fill out
 class RegistrationForm(FlaskForm):
     username = StringField('Username',
                             validators=[DataRequired(), Length(min=2, max=20)])
@@ -50,16 +50,19 @@ class RegistrationForm(FlaskForm):
                                     validators=[DataRequired(), EqualTo('password')])
     submit = SubmitField('Sign Up')
 
+    #To make sure that the username is valid with all of the qualifications
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user:
             raise ValidationError('Username already exists. Please try again.')
 
+    #A double enter/check that the email they first entered in is correct
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user:
             raise ValidationError('Email already exists. Please try again.')
 
+#The login layout for a user to login to
 class LoginForm(FlaskForm):
     email = StringField('Email',
                         validators=[DataRequired(), Email()])
@@ -67,6 +70,7 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
 
+#The layout for the user to update their information if they are on the account page 
 class UpdateAccountForm(FlaskForm):
     username = StringField('Username',
                             validators=[DataRequired(), Length(min=2, max=20)])
@@ -109,28 +113,33 @@ class UpdateAccountForm(FlaskForm):
                             validators=[DataRequired(), Length(min=2, max=20)])
     submit = SubmitField('Update')
 
+    #A check to see if the user hasn't already been created by a previous user
     def validate_username(self, username):
         if username.data != current_user.username:
             user = User.query.filter_by(username=username.data).first()
             if user:
                 raise ValidationError('Username already exists. Please try again.')
 
+    #To make sure the email hasn't already been used by a previous user
     def validate_email(self, email):
         if email.data != current_user.email:
             user = User.query.filter_by(email=email.data).first()
             if user:
                 raise ValidationError('Email already exists. Please try again.')
 
+#Form for the request to set a password, the one below is the actually changing of the password
 class RequestResetForm(FlaskForm):
     email = StringField('Email',
                         validators=[DataRequired(), Email()])
     submit = SubmitField('Request Password Reset')
 
+    #Must make sure the email goes with the password and if not will be asked to reigster with the website
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user is None:
             raise ValidationError('There is no account with that email. You must register.')
 
+#Form for the resetting your password
 class ResetPasswordForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password',

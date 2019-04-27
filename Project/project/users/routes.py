@@ -8,8 +8,12 @@ from project.users.utils import (save_picture, send_reset_email,
                                 generate_confirmation_token, confirm_token,
                                 send_email, check_confirmed)
 
+#Blueprint for the registration page 
 users = Blueprint('users', __name__)
 
+
+#A register method that entials all the information that needs to filled out
+#That comes with a confirmation token and if sent to be verified by administration
 @users.route("/register", methods=['GET','POST'])
 def register():
     if current_user.is_authenticated:
@@ -49,6 +53,7 @@ def register():
         return redirect(url_for('users.unconfirmed'))
     return render_template('register.html', title='Register', form=form)
 
+#A reroute for the user if they arent confirmed and if they are they will be returned to the main page
 @users.route('/unconfirmed')
 @login_required
 def unconfirmed():
@@ -56,6 +61,8 @@ def unconfirmed():
         return redirect('main.home')
     return render_template('unconfirmed.html')
 
+#Login form that the user can use and log in correctly if they are authenticated
+#If authenticated they will redirected to their main page that is unique to them
 @users.route("/login", methods=['GET','POST'])
 def login():
     if current_user.is_authenticated:
@@ -73,6 +80,9 @@ def login():
 
 @users.route('/confirm/<token>')
 @login_required
+
+#Just a confirmation for the user that the email is confirmed and if they do not do it in time
+#The confirmation link will be expired 
 def confirm_email(token):
     try:
         email = confirm_token(token)
@@ -88,6 +98,7 @@ def confirm_email(token):
         flash('You have confirmed your account. Thanks!', 'success')
     return redirect(url_for('users.login'))
 
+#A friends page that can be clicked on the main page with a 404 error if it does not load correctly
 @users.route("/friends")
 @login_required
 def friends():
@@ -96,6 +107,7 @@ def friends():
     friends = user.friended.all()
     return render_template('friends.html', title='Friends', friends=friends, user=user, users=users)
 
+#Friending method if you click on the add friend button and they will be added tot he db
 @users.route('/friend/<nickname>')
 @login_required
 def friend(nickname):
@@ -106,6 +118,8 @@ def friend(nickname):
     flash('You are now friends with ' + nickname + '!', 'success')
     return redirect(url_for('users.friends', title='Friends', users=users))
 
+#Unfriending method if you click on the remove friend button after they have been friended
+# and they will be added to the db as not a friend
 @users.route('/unfriend/<nickname>')
 @login_required
 def unfriend(nickname):
@@ -116,11 +130,14 @@ def unfriend(nickname):
     flash('You have unfriended ' + nickname + '!','success')
     return redirect(url_for('users.friends', title='Friends', users=users))
 
+#A logout button for the user if they are logged in
 @users.route("/logout")
 def logout():
     logout_user()
     return redirect(url_for('main.home'))
 
+#A method to check out all of the account information taht is specialized to them in particular
+#This method also is used to update their information
 @users.route("/account", methods=['GET','POST'])
 @login_required
 @check_confirmed
@@ -177,7 +194,7 @@ def account():
     return render_template('account.html', title='Account',
                            image_file=image_file, form=form, legend='New Post')
 
-
+#You can check out a users posts with this method
 @users.route("/user/<string:username>")
 def user_posts(username):
     page = request.args.get('page', 1, type=int)
@@ -187,6 +204,7 @@ def user_posts(username):
         .paginate(page=page, per_page=5)
     return render_template('user_posts.html', posts=posts, user=user)
 
+#A reset password function for a user 
 @users.route("/reset_password", methods=['GET','POST'])
 def reset_request():
     if current_user.is_authenticated:
@@ -199,6 +217,7 @@ def reset_request():
         return redirect(url_for('users.login'))
     return render_template('reset_request.html', title='Reset Password', form=form)
 
+#A token that is used to confirm and ensure that the password resetting is valid and is changed in time
 @users.route("/reset_password/<token>", methods=['GET','POST'])
 def reset_token(token):
     if current_user.is_authenticated:

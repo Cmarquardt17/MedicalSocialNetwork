@@ -1,8 +1,9 @@
 from flask import Blueprint, render_template
 
+#This creates a "Blueprint" that all pages will use in case of an error
 errors = Blueprint('errors', __name__)
 
-
+#All of the possible errors for each webpage
 @errors.app_errorhandler(404)
 def error_404(error):
     return render_template('errors/404.html'), 404

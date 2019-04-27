@@ -34,6 +34,7 @@ class BasicTests(unittest.TestCase):
     def tearDown(self):
         pass
 
+    #A test to delete a user and doing it successfully
     def test_delete_user(self):
         db.drop_all()
         db.create_all()
