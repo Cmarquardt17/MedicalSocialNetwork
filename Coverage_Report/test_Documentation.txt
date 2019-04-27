@@ -1,0 +1,12 @@
+For you test cases we have great coverage for our program,
+ but we have ran into the issue of the test coverage
+ trying to cover every single file within each framework which
+ is almost practically impossible to try and get complete coverage for them.
+ As you can see we ran the coverage command for each test file and got
+ a decent amount of coverage for the files we created.
+ Sonarcloud unfortunately does not pick up the test
+ cases from the py documents and hours have been put
+ into having to try and figure it out, but there is coverage judging by the screen shots
+ Also the bugs are primiarily from the frameworks and not from the code we have created 
+ If there is any questions regarding test please email christianmarquardt14@hotmail.com
+
